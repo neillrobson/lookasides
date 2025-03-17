@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="https://neillrobson.com/" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Neill Robson&#39;s Website</title>
-    <link>https://neillrobson.com/</link>
-    <atom:link href="https://neillrobson.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/</link>
+    <atom:link href="https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/feed.xml" rel="self" type="application/rss+xml" />
     <description>The blog and portfolio of a software developer.</description>
     <language>en</language>
     <item>
       <title>Batched Processing in RxJS</title>
-      <link>https://neillrobson.com/blog/2024/04/15/rxjs-batched-processing/</link>
+      <link>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2024/04/15/rxjs-batched-processing/</link>
       <description>&lt;section&gt;
 &lt;p&gt;When you have a ton of data that all needs to be processed, reactive programming makes the implementation easy to read, terse to write, and efficient to run.
 But when the data isn’t all needed, and processing the full stream is prohibitively expensive, more esoteric methods are necessary.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2024/04/15/rxjs-batched-processing/#context&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;context&quot;&gt;Context&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2024/04/15/rxjs-batched-processing/#context&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;context&quot;&gt;Context&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;Say you have an array or stream of image files. You want to send them off to a service that runs image recognition, to identify pictures with cats in them.
 You want specifically the &lt;em&gt;first four&lt;/em&gt; pictures with cats. Not just any four pictures with cats: perhaps the source array is already sorted by timestamp and you want the most recent four cat pictures.&lt;/p&gt;
@@ -28,7 +28,7 @@ You want specifically the &lt;em&gt;first four&lt;/em&gt; pictures with cats. No
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2024/04/15/rxjs-batched-processing/#concatenation&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;concatenation&quot;&gt;Concatenation&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2024/04/15/rxjs-batched-processing/#concatenation&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;concatenation&quot;&gt;Concatenation&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;Calling an asynchronous API for each item in an observable stream is a classic use case for one of the &lt;code&gt;*Map&lt;/code&gt; operators. Every operator in that family will create a new stream for each item in the source stream, then collapse the outputs into a single stream to pass down the pipeline.&lt;/p&gt;
 &lt;p&gt;Some of the map operators are clearly inappropriate:&lt;/p&gt;
@@ -46,12 +46,12 @@ You want specifically the &lt;em&gt;first four&lt;/em&gt; pictures with cats. No
 &lt;p&gt;It’s a clean pipeline! But in practice, this implementation processes the source images serially. Each API call must be returned before the next image is sent off.
 For a slow API, such serial processing is undesirable.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2024/04/15/rxjs-batched-processing/serial.png&quot; alt=&quot;visualization of serial pipeline processing&quot; title=&quot;The top pipeline represents queries sent to the API. The number on each data point is the number of queries happening in parallel. The bottom pipeline contains the four images identified as cats, emitted at the time they were identified.&quot;&gt;&lt;figcaption&gt;The top pipeline represents queries sent to the API. The number on each data point is the number of queries happening in parallel. The bottom pipeline contains the four images identified as cats, emitted at the time they were identified.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2024/04/15/rxjs-batched-processing/serial.png&quot; alt=&quot;visualization of serial pipeline processing&quot; title=&quot;The top pipeline represents queries sent to the API. The number on each data point is the number of queries happening in parallel. The bottom pipeline contains the four images identified as cats, emitted at the time they were identified.&quot;&gt;&lt;figcaption&gt;The top pipeline represents queries sent to the API. The number on each data point is the number of queries happening in parallel. The bottom pipeline contains the four images identified as cats, emitted at the time they were identified.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2024/04/15/rxjs-batched-processing/#merging&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;merging&quot;&gt;Merging&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2024/04/15/rxjs-batched-processing/#merging&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;merging&quot;&gt;Merging&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;We’ve got a fourth member of the &lt;code&gt;*Map&lt;/code&gt; family: &lt;code&gt;mergeMap&lt;/code&gt;. On the surface, it looks like precisely the operator we need.
 It creates child streams and merges them into the output stream as soon as input data arrives.&lt;/p&gt;
@@ -64,12 +64,12 @@ It creates child streams and merges them into the output stream as soon as input
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Testing it out yields a result worse than we started with: &lt;strong&gt;the order of the source images is no longer preserved&lt;/strong&gt;. We start seeing cat pictures from decades ago, simply because they happened to be the first ones returned by the API.&lt;/p&gt;
 &lt;div class=&quot;margin left&quot;&gt;&lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2024/04/15/rxjs-batched-processing/parallel.png&quot; alt=&quot;visualization of parallel pipeline processing&quot; title=&quot;Every single image is sent to the API in parallel. There were 21 images in the sample dataset, but the fourth cat image was the 17th item: we sent off four unnecessary API requests.&quot;&gt;&lt;figcaption&gt;Every single image is sent to the API in parallel. There were 21 images in the sample dataset, but the fourth cat image was the 17th item: we sent off four unnecessary API requests.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2024/04/15/rxjs-batched-processing/parallel.png&quot; alt=&quot;visualization of parallel pipeline processing&quot; title=&quot;Every single image is sent to the API in parallel. There were 21 images in the sample dataset, but the fourth cat image was the 17th item: we sent off four unnecessary API requests.&quot;&gt;&lt;figcaption&gt;Every single image is sent to the API in parallel. There were 21 images in the sample dataset, but the fourth cat image was the 17th item: we sent off four unnecessary API requests.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/div&gt;&lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2024/04/15/rxjs-batched-processing/#maintaining-order&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;maintaining-order&quot;&gt;Maintaining Order&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2024/04/15/rxjs-batched-processing/#maintaining-order&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;maintaining-order&quot;&gt;Maintaining Order&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;As it turns out, the serialization of streams in &lt;code&gt;concatMap&lt;/code&gt; (only creating a new stream when the previous one has completed) is a feature unique to that operator.
 If we simply split out the “map” part of the operator from the concatenation, we get the best of both worlds:&lt;/p&gt;
@@ -90,7 +90,7 @@ As it turns out, this pipeline sends &lt;em&gt;every single image&lt;/em&gt; to 
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2024/04/15/rxjs-batched-processing/#side-note%3A-hot-vs-cold&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;side-note%3A-hot-vs-cold&quot;&gt;&lt;em&gt;Side Note: Hot vs Cold&lt;/em&gt;&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2024/04/15/rxjs-batched-processing/#side-note%3A-hot-vs-cold&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;side-note%3A-hot-vs-cold&quot;&gt;&lt;em&gt;Side Note: Hot vs Cold&lt;/em&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;If you’re trying out this code on your own, you might find that your &lt;code&gt;map&lt;/code&gt;/&lt;code&gt;concatAll&lt;/code&gt; implementation did not parallelize like you wanted it to. Most likely, it’s a result of implementing &lt;code&gt;identifyImage&lt;/code&gt; as a pure RxJS stream, otherwise known as a “cold” observable. The difference between cold and hot observables is simple to state, hard to internalize:&lt;/p&gt;
 &lt;ul&gt;
@@ -128,7 +128,7 @@ As it turns out, this pipeline sends &lt;em&gt;every single image&lt;/em&gt; to 
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2024/04/15/rxjs-batched-processing/#batching&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;batching&quot;&gt;Batching&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2024/04/15/rxjs-batched-processing/#batching&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;batching&quot;&gt;Batching&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;We managed to get API call parallelization, while still preserving data order, but we’re calling the API way too much.
 We need to design a way for the pipeline to only process the data it knows it could use, and terminate early once the four desired cat images are identified.&lt;/p&gt;
@@ -152,7 +152,7 @@ sourceImages$.pipe(
 &lt;p&gt;How do we initialize and manage &lt;code&gt;batcher$&lt;/code&gt;?&lt;/p&gt;
 &lt;p&gt;We know that, when an image comes through that &lt;em&gt;isn’t&lt;/em&gt; a cat, we want to call &lt;code&gt;batcher$.next()&lt;/code&gt; to add another image into processing. If an image is a cat, we don’t need to trigger the batcher, because that output “slot” is filled.&lt;/p&gt;
 &lt;p&gt;So we now have actions we want to take for both the positives &lt;em&gt;and&lt;/em&gt; negatives of our &lt;code&gt;filter&lt;/code&gt; operator… meaning that we need something more robust than &lt;code&gt;filter&lt;/code&gt;. Enter the &lt;code&gt;partition&lt;/code&gt; utility, which splits an Observable stream into two streams for the positive and negative items against a filter!&lt;/p&gt;
-&lt;div class=&quot;margin right&quot;&gt;&lt;p&gt;Since we are creating (and eventually subscribing to) &lt;em&gt;two&lt;/em&gt; streams with the same source pipeline, we need to “share()” the pipeline to ensure that we aren’t double-calling the API. See the &lt;a href=&quot;https://neillrobson.com/blog/2024/04/15/rxjs-batched-processing/#side-note%3A-hot-vs-cold&quot;&gt;hot versus cold&lt;/a&gt; section for details.&lt;/p&gt;
+&lt;div class=&quot;margin right&quot;&gt;&lt;p&gt;Since we are creating (and eventually subscribing to) &lt;em&gt;two&lt;/em&gt; streams with the same source pipeline, we need to “share()” the pipeline to ensure that we aren’t double-calling the API. See the &lt;a href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2024/04/15/rxjs-batched-processing/#side-note%3A-hot-vs-cold&quot;&gt;hot versus cold&lt;/a&gt; section for details.&lt;/p&gt;
 &lt;/div&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const batcher$ = new Subject();
 
 const [cats$, notCats$] = partition(
@@ -183,12 +183,12 @@ range(1, 4).subscribe(() =&amp;gt; batcher$.next());
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The initial run will send off four API calls at once. The pipeline will maintain four in-flight API calls until one of them returns with a cat. Each cat received will effectively decrement the parallelism, preventing us from over-querying the API after we’ve already received our four cats.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2024/04/15/rxjs-batched-processing/batched.png&quot; alt=&quot;visualization of batched pipeline processing&quot; title=&quot;Notice how up to four parallel API calls are allowed at first. The number drops to three when the first cat is identified, then down to one when two cats are found in quick succession.&quot;&gt;&lt;figcaption&gt;Notice how up to four parallel API calls are allowed at first. The number drops to three when the first cat is identified, then down to one when two cats are found in quick succession.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2024/04/15/rxjs-batched-processing/batched.png&quot; alt=&quot;visualization of batched pipeline processing&quot; title=&quot;Notice how up to four parallel API calls are allowed at first. The number drops to three when the first cat is identified, then down to one when two cats are found in quick succession.&quot;&gt;&lt;figcaption&gt;Notice how up to four parallel API calls are allowed at first. The number drops to three when the first cat is identified, then down to one when two cats are found in quick succession.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2024/04/15/rxjs-batched-processing/#conclusion&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2024/04/15/rxjs-batched-processing/#conclusion&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;Here’s the final pipeline we created:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const NUM_CATS = 4;
@@ -228,11 +228,11 @@ But when the opportunity to wrestle with RxJS does arise, I find that the satisf
 </description>
       <pubDate>Mon, 15 Apr 2024 17:47:00 GMT</pubDate>
       <dc:creator>Neill Robson</dc:creator>
-      <guid>https://neillrobson.com/blog/2024/04/15/rxjs-batched-processing/</guid>
+      <guid>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2024/04/15/rxjs-batched-processing/</guid>
     </item>
     <item>
       <title>Small Group Leadership Brunch Speech</title>
-      <link>https://neillrobson.com/blog/2024/01/18/leadership-full/</link>
+      <link>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2024/01/18/leadership-full/</link>
       <description>&lt;section&gt;
 &lt;p&gt;The following is a written draft of a speech I gave to a gathering of small group
 leaders at my church several months ago. After running across the file, I felt it
@@ -300,11 +300,11 @@ he’s glad we’re taking a part in it.&lt;/p&gt;
 </description>
       <pubDate>Thu, 18 Jan 2024 02:22:00 GMT</pubDate>
       <dc:creator>Neill Robson</dc:creator>
-      <guid>https://neillrobson.com/blog/2024/01/18/leadership-full/</guid>
+      <guid>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2024/01/18/leadership-full/</guid>
     </item>
     <item>
       <title>Invisalign of the Heart</title>
-      <link>https://neillrobson.com/blog/2023/03/06/invisalign-of-the-heart/</link>
+      <link>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2023/03/06/invisalign-of-the-heart/</link>
       <description>&lt;section&gt;
 &lt;p&gt;For the second time in my life, I am undergoing the tedious and painful
 experience of tooth re-alignment. As a coping mechanism, why not pontificate on
@@ -351,7 +351,7 @@ from braces)&lt;/li&gt;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2023/03/06/invisalign-of-the-heart/#i%E2%80%99m-still-going-to-complain&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;i%E2%80%99m-still-going-to-complain&quot;&gt;I’m Still Going to Complain&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2023/03/06/invisalign-of-the-heart/#i%E2%80%99m-still-going-to-complain&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;i%E2%80%99m-still-going-to-complain&quot;&gt;I’m Still Going to Complain&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;Upon forking over the several hundred dollars for the retainer and popping it
 in, I enjoyed a about five seconds of satisfaction with my purchase before the
@@ -378,7 +378,7 @@ word reminded the whole vicinity of the new operation taking place on my teeth.&
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2023/03/06/invisalign-of-the-heart/#the-second-hole-is-the-hardest&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;the-second-hole-is-the-hardest&quot;&gt;The Second Hole is the Hardest&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2023/03/06/invisalign-of-the-heart/#the-second-hole-is-the-hardest&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;the-second-hole-is-the-hardest&quot;&gt;The Second Hole is the Hardest&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;“Surely things got better after that first adjustment period! Folks wear these
 for several years: it can’t be that bad!”&lt;/p&gt;
@@ -426,7 +426,7 @@ seemed quite apropos to compare with the circumstances God uses to grow us.&lt;/
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2023/03/06/invisalign-of-the-heart/#invisalign-of-the-heart&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;invisalign-of-the-heart&quot;&gt;Invisalign of the Heart&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2023/03/06/invisalign-of-the-heart/#invisalign-of-the-heart&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;invisalign-of-the-heart&quot;&gt;Invisalign of the Heart&lt;/h2&gt;
 &lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;God, create a clean heart for me
@@ -499,11 +499,11 @@ plastic sheets in my mouth!&lt;/p&gt;
 </description>
       <pubDate>Mon, 06 Mar 2023 19:53:00 GMT</pubDate>
       <dc:creator>Neill Robson</dc:creator>
-      <guid>https://neillrobson.com/blog/2023/03/06/invisalign-of-the-heart/</guid>
+      <guid>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2023/03/06/invisalign-of-the-heart/</guid>
     </item>
     <item>
       <title>Typescript&#39;s Skeleton Key</title>
-      <link>https://neillrobson.com/blog/2022/11/01/typescripts-skeleton-key/</link>
+      <link>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2022/11/01/typescripts-skeleton-key/</link>
       <description>&lt;section&gt;
 &lt;p&gt;The intrepid Typescript developer will find several types that, frankly, make no sense whatsoever in real life. A “string” or “number” is perfectly reasonable, but what is an “unknown” or “never” type?&lt;/p&gt;
 &lt;p&gt;More importantly, what in the world is a “keyof never”?&lt;/p&gt;
@@ -523,7 +523,7 @@ interface Animal {
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2022/11/01/typescripts-skeleton-key/#union&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;union&quot;&gt;Union&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2022/11/01/typescripts-skeleton-key/#union&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;union&quot;&gt;Union&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;Perhaps we also want a function that accepts either a &lt;code&gt;Vehicle&lt;/code&gt; or &lt;code&gt;Animal&lt;/code&gt; and returns its name. How would we write that function and its signature?&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-typescript&quot;&gt;function getName(entity: Vehicle | Animal): string {
@@ -543,7 +543,7 @@ interface Animal {
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2022/11/01/typescripts-skeleton-key/#intersection&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;intersection&quot;&gt;Intersection&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2022/11/01/typescripts-skeleton-key/#intersection&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;intersection&quot;&gt;Intersection&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;Now, we could also have an object (one that is currently untyped) called “horse”:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-typescript&quot;&gt;const horse = {
@@ -561,7 +561,7 @@ const horse: Steed;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2022/11/01/typescripts-skeleton-key/#unknown-and-never&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;unknown-and-never&quot;&gt;Unknown and Never&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2022/11/01/typescripts-skeleton-key/#unknown-and-never&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;unknown-and-never&quot;&gt;Unknown and Never&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;Among Typescript’s special-case built-in types are two polar opposites, &lt;code&gt;unknown&lt;/code&gt; and &lt;code&gt;never&lt;/code&gt;. What do those types mean?&lt;/p&gt;
 &lt;p&gt;If a variable is an &lt;code&gt;unknown&lt;/code&gt; type, then you can assign any value to it. &lt;em&gt;Anything. Always.&lt;/em&gt; Likewise, a variable with a &lt;code&gt;never&lt;/code&gt; type can not have anything assigned to it. &lt;em&gt;Nothing. At all.&lt;/em&gt;&lt;/p&gt;
@@ -582,7 +582,7 @@ const horse: Steed;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2022/11/01/typescripts-skeleton-key/#the-%E2%80%9Ckeyof%E2%80%9D-utility&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;the-%E2%80%9Ckeyof%E2%80%9D-utility&quot;&gt;The “keyof” Utility&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2022/11/01/typescripts-skeleton-key/#the-%E2%80%9Ckeyof%E2%80%9D-utility&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;the-%E2%80%9Ckeyof%E2%80%9D-utility&quot;&gt;The “keyof” Utility&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;This little operator has a pretty simple use: it creates a type consisting of a &lt;em&gt;union&lt;/em&gt; of the possible keys for an object.&lt;/p&gt;
 &lt;p&gt;Some code is worth a thousand words:&lt;/p&gt;
@@ -598,7 +598,7 @@ type AnimalKey = keyof Animal;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2022/11/01/typescripts-skeleton-key/#keyof-with-unions-and-intersections&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;keyof-with-unions-and-intersections&quot;&gt;&lt;code&gt;keyof&lt;/code&gt; with Unions and Intersections&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2022/11/01/typescripts-skeleton-key/#keyof-with-unions-and-intersections&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;keyof-with-unions-and-intersections&quot;&gt;&lt;code&gt;keyof&lt;/code&gt; with Unions and Intersections&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;Think of our old example types of &lt;code&gt;Vehicle&lt;/code&gt;, &lt;code&gt;Animal&lt;/code&gt;, and &lt;code&gt;Steed&lt;/code&gt;. How would &lt;code&gt;keyof&lt;/code&gt; behave with the union and intersection operators?&lt;/p&gt;
 &lt;ul&gt;
@@ -613,7 +613,7 @@ type AnimalKey = keyof Animal;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2022/11/01/typescripts-skeleton-key/#putting-it-all-together&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;putting-it-all-together&quot;&gt;Putting it all together&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2022/11/01/typescripts-skeleton-key/#putting-it-all-together&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;putting-it-all-together&quot;&gt;Putting it all together&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;We have enough information now to consider the original question: What is &lt;code&gt;keyof never&lt;/code&gt;? Or &lt;code&gt;keyof unknown&lt;/code&gt;? The answer, while unintuitive, is quite logical!&lt;/p&gt;
 &lt;p&gt;Let’s start again with &lt;code&gt;unknown&lt;/code&gt;:&lt;/p&gt;
@@ -651,7 +651,7 @@ type AnimalKey = keyof Animal;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2022/11/01/typescripts-skeleton-key/#why-do-we-even-need-this%3F&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;why-do-we-even-need-this%3F&quot;&gt;Why do we even need this?&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2022/11/01/typescripts-skeleton-key/#why-do-we-even-need-this%3F&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;why-do-we-even-need-this%3F&quot;&gt;Why do we even need this?&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;Admittedly, it’s mostly a fun thought exercise for me! But there is some marginal benefit.&lt;/p&gt;
 &lt;p&gt;If you are trying to define a variant of the &lt;code&gt;Record&lt;/code&gt; type and want to provide no restrictions on what keys are used, you can use the generic type &lt;code&gt;K extends keyof never&lt;/code&gt; to ensure that all valid key types are allowed (and, at the same time, preventing syntactically invalid key types). Granted, you could also use the more explicit &lt;code&gt;String | Number | Symbol&lt;/code&gt;, and you’d be 99.9% sure to cover everything. However, if the language ever evolves in the future to allow a wider (or—somehow—narrower) set of key types, &lt;code&gt;keyof never&lt;/code&gt; would by definition pick up on the change immediately, with no intervention necessary from the developer.&lt;/p&gt;
@@ -660,11 +660,11 @@ type AnimalKey = keyof Animal;
 </description>
       <pubDate>Tue, 01 Nov 2022 13:38:00 GMT</pubDate>
       <dc:creator>Neill Robson</dc:creator>
-      <guid>https://neillrobson.com/blog/2022/11/01/typescripts-skeleton-key/</guid>
+      <guid>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2022/11/01/typescripts-skeleton-key/</guid>
     </item>
     <item>
       <title>Grad School Like I&#39;m Five: Buffer Overflow</title>
-      <link>https://neillrobson.com/blog/2020/11/23/grad-school-like-im-five/</link>
+      <link>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2020/11/23/grad-school-like-im-five/</link>
       <description>&lt;section&gt;
 &lt;p&gt;According to &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;, I’ve written approximately 6,000 lines of code over the course of the past four months (welcome to grad school!).
 The question is, can I explain all of the stuff I wrote?
@@ -736,11 +736,11 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 </description>
       <pubDate>Mon, 23 Nov 2020 20:25:00 GMT</pubDate>
       <dc:creator>Neill Robson</dc:creator>
-      <guid>https://neillrobson.com/blog/2020/11/23/grad-school-like-im-five/</guid>
+      <guid>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2020/11/23/grad-school-like-im-five/</guid>
     </item>
     <item>
       <title>Book Review: The Circle, by Dave Eggers</title>
-      <link>https://neillrobson.com/blog/2018/02/24/book-review-the-circle-by-dave-eggers/</link>
+      <link>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2018/02/24/book-review-the-circle-by-dave-eggers/</link>
       <description>&lt;section&gt;
 &lt;p&gt;For the first time I can remember in a long while, I did not have the endurance to make it through a book. &lt;em&gt;The Circle&lt;/em&gt; was patronizing, immature, and (as others have already mentioned) offered nothing new to the conversation.  Halfway through the book, I could not recall a single plot development that could not be recreated precisely (often down to the phrasing of the words) from current news or social media. Some speculative literature provides an insightful reflection on human nature; others grant an escape from the world’s worries; Eggers manages to to neither in his work, using such an explicit and leaden pen that one might draw parallels to reading one’s own social media feed.&lt;/p&gt;
 &lt;p&gt;The third-person limited point of view tries desperately to inspire the reader’s empathy towards the protagonist, but the narrative thrashes between vapid predictability and deplorable decision-making. Typically, a character’s weaknesses and vulnerabilities evoke some measure of compassion from the audience, but I found no such sympathy for a protagonist so passive and malleable to her own surroundings.&lt;/p&gt;
@@ -753,11 +753,11 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 </description>
       <pubDate>Sat, 24 Feb 2018 15:13:00 GMT</pubDate>
       <dc:creator>Neill Robson</dc:creator>
-      <guid>https://neillrobson.com/blog/2018/02/24/book-review-the-circle-by-dave-eggers/</guid>
+      <guid>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2018/02/24/book-review-the-circle-by-dave-eggers/</guid>
     </item>
     <item>
       <title>The Infamous Liebster Award</title>
-      <link>https://neillrobson.com/blog/2018/01/28/the-infamous-liebster-award/</link>
+      <link>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2018/01/28/the-infamous-liebster-award/</link>
       <description>&lt;section&gt;
 &lt;p&gt;As an encouragement to continue sharing my thoughts and experiences online, a person near and dear to my heart nominated me for &lt;a href=&quot;https://theglobalaussie.com/liebster-award-2018/&quot;&gt;the Liebster Award&lt;/a&gt;.&lt;/p&gt;
 &lt;figure&gt;&lt;img src=&quot;https://theglobalaussie.com/wp-content/uploads/2017/12/More-Flowers.png&quot; alt=&quot;Liebster Award Logo&quot;&gt;&lt;/figure&gt;
@@ -767,19 +767,19 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2018/01/28/the-infamous-liebster-award/#intention-explained&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;intention-explained&quot;&gt;Intention Explained&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2018/01/28/the-infamous-liebster-award/#intention-explained&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;intention-explained&quot;&gt;Intention Explained&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;Why do I write blogs?&lt;/p&gt;
 &lt;p&gt;My journey began when I took a trip abroad to Hangzhou, China, and was seeking a way to memorialize that unique experience and share it with friends and family back home. Being a quixotic techie with a dogged proclivity toward independence, I threw together a self-hosted website on which I built a resume page in spartan HTML/CSS and a &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost blog&lt;/a&gt; for recording my time in China. Since then, I’ve spent much more time investing in the website’s technology rather than its content (form over function–an incorrigible flaw against which I battle), and have most recently settled on a &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll site&lt;/a&gt; hosted on &lt;a href=&quot;https://github.com/&quot;&gt;Github&lt;/a&gt; (a platform to help software developers track their code and collaborate) and managed with &lt;a href=&quot;http://prose.io/&quot;&gt;Prose&lt;/a&gt;.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2018/01/the-infamous-liebster-award/jekyll.png&quot; alt=&quot;Github and Jekyll&quot; title=&quot;Jekyll static website generator, plus Github Pages hosting: A match made in an evil genius&#39;s lab.&quot;&gt;&lt;figcaption&gt;Jekyll static website generator, plus Github Pages hosting: A match made in an evil genius’s lab.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2018/01/the-infamous-liebster-award/jekyll.png&quot; alt=&quot;Github and Jekyll&quot; title=&quot;Jekyll static website generator, plus Github Pages hosting: A match made in an evil genius&#39;s lab.&quot;&gt;&lt;figcaption&gt;Jekyll static website generator, plus Github Pages hosting: A match made in an evil genius’s lab.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;But, technologies aside, why do I still strive to immortalize my thoughts in text, and publish them online for the world to see? In truth, my motivation comes down to my love for storytelling: using narratives in every form to build connections with others. From the color palletes of the websites I build to the tension of the piano’s vibrations, from the worlds invented through extemporized theatrical performance to the themes shared through a video game, I am in love with communication–especially through non-traditional media. Building a website and contribuing to a blog is one way I believe that I can combine my two somewhat divergent passions–software development and narrative creation–into a single product.&lt;/p&gt;
 &lt;p&gt;I also like being able to save and revise drafts of my thoughts: a practice that most other forms of online social media don’t necessarily allow!&lt;/p&gt;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2018/01/28/the-infamous-liebster-award/#questions-answered&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;questions-answered&quot;&gt;Questions Answered&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2018/01/28/the-infamous-liebster-award/#questions-answered&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;questions-answered&quot;&gt;Questions Answered&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;I will now attempt to answer the eleven inquiries of my nominator, La Creadora Fantasma:&lt;/p&gt;
 &lt;ol&gt;
@@ -789,7 +789,7 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 &lt;p&gt;That said, as I continue to grow in my understanding of various computer technologies, companies, and cultures, I am also beginning to take into account the pragmatic realities of the field. &amp;quot;Open Source&amp;quot; does not necessarily imply an open and inclusive development community. It doesn&#39;t always yield accessible software, and the provided products and services often fail to bring food to the table of their contributors. There is a time for everything, and a season for every activity under the heavens&lt;label for=&quot;sn-1&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input id=&quot;sn-1&quot; type=&quot;checkbox&quot; class=&quot;margin-toggle&quot;&gt;&lt;span class=&quot;sidenote&quot;&gt;Ecclesiastes 3:1.&lt;/span&gt;; free and open-source software has an important place in our community, but it is not the answer to all technological woes.&lt;/p&gt;
 &lt;p&gt;From a practical perspective, I actually find myself leaning slightly toward Microsoft. Although I am perhaps least familiar with system administration and software development on Windows, I find Microsoft’s recent actions as a company pleasantly surprising and admirable. They seem eager to make their products accessible and open both to developers (who desire clear documentation and transparent sources) and end users (who desire dependability and elegant functionality). Microsoft doesn’t exhibit the vertical integration of their products and services that Apple does (allowing Apple to provide beautiful interfaces to their customers), but in relaxing their hold on the reins, Microsoft forms better relationships with their developer community. Microsoft still keeps much of their software closed-source, but without doing so they would struggle to make ends meet in order to deliver the high-quality services that end users have come to expect.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2018/01/the-infamous-liebster-award/Microsoft-logo_rgb_c-gray.png&quot; alt=&quot;Microsoft logo circa 2018&quot; title=&quot;A pretty (flat) logo&quot;&gt;&lt;figcaption&gt;A pretty (flat) logo&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2018/01/the-infamous-liebster-award/Microsoft-logo_rgb_c-gray.png&quot; alt=&quot;Microsoft logo circa 2018&quot; title=&quot;A pretty (flat) logo&quot;&gt;&lt;figcaption&gt;A pretty (flat) logo&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;So, long story short: In a perfect world, Linux. In this world, Microsoft!&lt;/p&gt;
 &lt;/li&gt;
@@ -800,7 +800,7 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 &lt;li&gt;
 &lt;p&gt;Herbal, green, black, or white tea?&lt;/p&gt;
 &lt;p&gt;I think I’ll have to go with the only choice on the list that isn’t, biologically speaking, tea: the variety of potentials in herbal drinks are what cause me to choose them as my favorite. Of course, one can create concoctions of tea leaves infused with herbs and spices as well, making herbal drinks a perfectly valid option on the list, although I suppose the choice is a bit of a cop-out response as I’m defining it to encompass every other option.&lt;/p&gt;
-&lt;p&gt;If I had to choose a type of tea leaf, I would probably choose green tea, because of my lovely experience with Longjing tea in Hangzhou, Zhejiang, China (which you can read more about &lt;a href=&quot;https://neillrobson.com/blog/2016/06/15/the-tea/&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;If I had to choose a type of tea leaf, I would probably choose green tea, because of my lovely experience with Longjing tea in Hangzhou, Zhejiang, China (which you can read more about &lt;a href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2016/06/15/the-tea/&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;What was your favorite song as a small kid?&lt;/p&gt;
@@ -808,7 +808,7 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 &lt;p&gt;The first song I remember falling in love with as a performance piece (on the piano) was &lt;a href=&quot;https://www.youtube.com/watch?v=d020hcWA_Wg&quot;&gt;Clocks by Coldplay&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The first song I ever purchased was &lt;a href=&quot;https://www.youtube.com/watch?v=Y6ljFaKRTrI&quot;&gt;Still Alive by Jonathan Coulton&lt;/a&gt;. I also ended up parodying this song as a goodbye gift for the music teacher who directed the theatre production that was pivotal in maturing me emotionally and socially.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2018/01/the-infamous-liebster-award/chell.jpg&quot; alt=&quot;The protagonist of Portal&quot; title=&quot;Fan art of Portal--the video game in which Jonathan Coulton&#39;s song was featured&quot;&gt;&lt;figcaption&gt;Fan art of Portal–the video game in which Jonathan Coulton’s song was featured&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2018/01/the-infamous-liebster-award/chell.jpg&quot; alt=&quot;The protagonist of Portal&quot; title=&quot;Fan art of Portal--the video game in which Jonathan Coulton&#39;s song was featured&quot;&gt;&lt;figcaption&gt;Fan art of Portal–the video game in which Jonathan Coulton’s song was featured&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Speaking of that show, I am quite fond of several songs in the soundtrack of &lt;a href=&quot;https://www.youtube.com/playlist?list=PLnbBAvpTGon8EN_eh_zALsb7dxPy-ttnd&quot;&gt;HONK Jr&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The first song I ever performed for a romantic interest was &lt;a href=&quot;https://www.youtube.com/watch?v=gynYtBmYlnk&quot;&gt;The Pout-Pout Fish&lt;/a&gt;.&lt;/p&gt;
@@ -824,7 +824,7 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 &lt;p&gt;Do you know what a viola is?&lt;/p&gt;
 &lt;p&gt;Yeah… Isn’t it a string instrument that specializes in producing tones between the ranges of a violin and cello? I’m purposely not going to look up whether I’m right or not to preserve the innocence of my potentially incorrect and offensive answer.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2018/01/the-infamous-liebster-award/viola.jpg&quot; alt=&quot;viola&quot; title=&quot;Something like this, I think&quot;&gt;&lt;figcaption&gt;Something like this, I think&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2018/01/the-infamous-liebster-award/viola.jpg&quot; alt=&quot;viola&quot; title=&quot;Something like this, I think&quot;&gt;&lt;figcaption&gt;Something like this, I think&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -847,7 +847,7 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 &lt;p&gt;Although I’ve never played a full session before, I have always venerated the Japanese board game &lt;a href=&quot;https://en.wikipedia.org/wiki/Go_game&quot;&gt;Go&lt;/a&gt; for its simplicity and stunning depth of strategy. There is only one type of piece, and they never move once placed, yet it took exponentially more computing power for artificial intelligence to beat a human at Go than it did for the game of Chess, with its sundry rules and moves.&lt;/p&gt;
 &lt;p&gt;Best video game is, without the shadow of a doubt, &lt;a href=&quot;http://store.steampowered.com/app/210970/The_Witness/&quot;&gt;The Witness&lt;/a&gt;. It is a marvellous tapestry outlining human intelligence and philosophy, and a shining example of nonverbal communication. It is the one video game that I believe would have engaged C.S. Lewis, Steve Jobs, and Douglas Hofstadter alike.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2018/01/the-infamous-liebster-award/witness.jpg&quot; alt=&quot;logo for The Witness&quot; title=&quot;Beautiful.&quot;&gt;&lt;figcaption&gt;Beautiful.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2018/01/the-infamous-liebster-award/witness.jpg&quot; alt=&quot;logo for The Witness&quot; title=&quot;Beautiful.&quot;&gt;&lt;figcaption&gt;Beautiful.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -862,7 +862,7 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2018/01/28/the-infamous-liebster-award/#facts-delivered&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;facts-delivered&quot;&gt;Facts Delivered&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2018/01/28/the-infamous-liebster-award/#facts-delivered&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;facts-delivered&quot;&gt;Facts Delivered&lt;/h2&gt;
 &lt;/div&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -877,7 +877,7 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 &lt;li&gt;
 &lt;p&gt;My first paying job was acting as the cow mascot for Chick-fil-A. I had to quit because I grew too tall for the suit.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2018/01/the-infamous-liebster-award/chick-fil-a-cow-day-2013.jpg&quot; alt=&quot;A Chick-fil-A cow mascot&quot; title=&quot;Is that me?! Wouldn&#39;t you like to know...&quot;&gt;&lt;figcaption&gt;Is that me?! Wouldn’t you like to know…&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2018/01/the-infamous-liebster-award/chick-fil-a-cow-day-2013.jpg&quot; alt=&quot;A Chick-fil-A cow mascot&quot; title=&quot;Is that me?! Wouldn&#39;t you like to know...&quot;&gt;&lt;figcaption&gt;Is that me?! Wouldn’t you like to know…&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -892,7 +892,7 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 &lt;li&gt;
 &lt;p&gt;The latest I have ever stayed awake is 3am: I was infuriated because I could not connect to a Raspberry Pi headless (without a monitor). I have never pulled a true all-nighter.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2018/01/the-infamous-liebster-award/rpi.png&quot; alt=&quot;The Raspberry Pi motherboard, shown to sacle.&quot; title=&quot;I&#39;ve never tasted a real raspberry pie before: only the bitter tears of bootstrapping one.&quot;&gt;&lt;figcaption&gt;I’ve never tasted a real raspberry pie before: only the bitter tears of bootstrapping one.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2018/01/the-infamous-liebster-award/rpi.png&quot; alt=&quot;The Raspberry Pi motherboard, shown to sacle.&quot; title=&quot;I&#39;ve never tasted a real raspberry pie before: only the bitter tears of bootstrapping one.&quot;&gt;&lt;figcaption&gt;I’ve never tasted a real raspberry pie before: only the bitter tears of bootstrapping one.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -908,7 +908,7 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2018/01/28/the-infamous-liebster-award/#questions-asked&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;questions-asked&quot;&gt;Questions Asked&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2018/01/28/the-infamous-liebster-award/#questions-asked&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;questions-asked&quot;&gt;Questions Asked&lt;/h2&gt;
 &lt;/div&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -929,7 +929,7 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 &lt;li&gt;
 &lt;p&gt;What is your favorite constant number? Zero, One, Pi, Euler’s Constant, the Imaginary Number? Constant of permittivity or permeability? Something else?&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2018/01/the-infamous-liebster-award/math.jpg&quot; alt=&quot;Handwritten Latin and Greek alphabets&quot; title=&quot;My handwriting? Ha. I wish...&quot;&gt;&lt;figcaption&gt;My handwriting? Ha. I wish…&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2018/01/the-infamous-liebster-award/math.jpg&quot; alt=&quot;Handwritten Latin and Greek alphabets&quot; title=&quot;My handwriting? Ha. I wish...&quot;&gt;&lt;figcaption&gt;My handwriting? Ha. I wish…&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -951,7 +951,7 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2018/01/28/the-infamous-liebster-award/#nominations&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;nominations&quot;&gt;Nominations&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2018/01/28/the-infamous-liebster-award/#nominations&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;nominations&quot;&gt;Nominations&lt;/h2&gt;
 &lt;/div&gt;
 &lt;h3&gt;&lt;em&gt;a.k.a. The Plot Twist&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;Having poured so much effort into this blog so far, I am ashamed to leave it incomplete due to a single negative perspective found on the Internet. However, as a matter of respect for other content producers and young professionals trying to establish a personal brand online, I have decided not to distribute any nominations for the Liebster award.&lt;/p&gt;
@@ -964,11 +964,11 @@ I cannot yet release my own code to the public for viewing, as grades for the cl
 </description>
       <pubDate>Sun, 28 Jan 2018 19:30:00 GMT</pubDate>
       <dc:creator>Neill Robson</dc:creator>
-      <guid>https://neillrobson.com/blog/2018/01/28/the-infamous-liebster-award/</guid>
+      <guid>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2018/01/28/the-infamous-liebster-award/</guid>
     </item>
     <item>
       <title>Access vs. Ownership</title>
-      <link>https://neillrobson.com/blog/2017/05/29/access-versus-ownership/</link>
+      <link>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2017/05/29/access-versus-ownership/</link>
       <description>&lt;section&gt;
 &lt;p&gt;Recently I came across advertising online for a new co-living experiment taking
 place in Los Angeles. The name of the startup is PodShare. Essentially, the goal
@@ -982,7 +982,7 @@ restrooms are handled dormitory-style. Maintaining a clean and safe environment
 is as much the residents’ job as it is the staff’s, in the sense that everyone’s
 space can be seen from all angles, creating an aura of community watch.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2017/05/access-vs-ownership/clean-pods.jpg&quot; alt=&quot;PodShare bunk beds&quot; title=&quot;A typical quiet afternoon amongst the pods&quot;&gt;&lt;figcaption&gt;A typical quiet afternoon amongst the pods&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2017/05/access-vs-ownership/clean-pods.jpg&quot; alt=&quot;PodShare bunk beds&quot; title=&quot;A typical quiet afternoon amongst the pods&quot;&gt;&lt;figcaption&gt;A typical quiet afternoon amongst the pods&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;If this description is hard to visualize, a good video providing an overview and
 history of the startup can be found
@@ -990,7 +990,7 @@ history of the startup can be found
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2017/05/29/access-versus-ownership/#the-bare-luxuries&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;the-bare-luxuries&quot;&gt;The Bare Luxuries&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2017/05/29/access-versus-ownership/#the-bare-luxuries&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;the-bare-luxuries&quot;&gt;The Bare Luxuries&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;My initial reaction to this foreign living concept could be described best as a
 shameful terror. Terror, because I couldn’t imagine living in a situation so
@@ -1025,7 +1025,7 @@ timeshare too: &lt;strong&gt;your bed &lt;em&gt;is&lt;/em&gt; your timeshare now
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2017/05/29/access-versus-ownership/#ownership%E2%80%99s-intrinsic-value&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;ownership%E2%80%99s-intrinsic-value&quot;&gt;Ownership’s Intrinsic Value&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2017/05/29/access-versus-ownership/#ownership%E2%80%99s-intrinsic-value&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;ownership%E2%80%99s-intrinsic-value&quot;&gt;Ownership’s Intrinsic Value&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;PodShare challenges our very definitions of house and home. “The future is
 access, not ownership,” claims Elvina Beck, the founder of the company.
@@ -1033,7 +1033,7 @@ Millennials invest in gym memberships, public transportation, and music
 streaming services rather than purchasing the physical capital necessary to
 enjoy these luxuries for ourselves. Why not extend that idea to our very homes?&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2017/05/access-vs-ownership/community.jpg&quot; alt=&quot;Elvina Beck&quot; title=&quot;The occasional evening activity creates a sense of community. Hopefully nobody was looking to sleep tonight.&quot;&gt;&lt;figcaption&gt;The occasional evening activity creates a sense of community. Hopefully nobody was looking to sleep tonight.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2017/05/access-vs-ownership/community.jpg&quot; alt=&quot;Elvina Beck&quot; title=&quot;The occasional evening activity creates a sense of community. Hopefully nobody was looking to sleep tonight.&quot;&gt;&lt;figcaption&gt;The occasional evening activity creates a sense of community. Hopefully nobody was looking to sleep tonight.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;I do agree that, in the general case, owning less can lead to living more. Our
 culture in the United States has lost much of that compassionate, cooperative
@@ -1061,7 +1061,7 @@ received a recording of the event, to be viewed on demand at any location or
 time? More importantly, if I had never experienced the original, &lt;em&gt;would I even
 know what I was missing from the experience?&lt;/em&gt;&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2017/05/access-vs-ownership/ben-glenn.jpg&quot; alt=&quot;Ben Glenn&quot; title=&quot;Ben may create the same drawing thousands of times, but the one he crafted when I was in attendance was uniquely mine. No recreation does it justice.&quot;&gt;&lt;figcaption&gt;Ben may create the same drawing thousands of times, but the one he crafted when I was in attendance was uniquely mine. No recreation does it justice.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2017/05/access-vs-ownership/ben-glenn.jpg&quot; alt=&quot;Ben Glenn&quot; title=&quot;Ben may create the same drawing thousands of times, but the one he crafted when I was in attendance was uniquely mine. No recreation does it justice.&quot;&gt;&lt;figcaption&gt;Ben may create the same drawing thousands of times, but the one he crafted when I was in attendance was uniquely mine. No recreation does it justice.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;I do not believe I could describe with any accuracy the psychological difference
 between owning a home and having geographically-independent access to shelter,
@@ -1077,7 +1077,7 @@ accumulating the freedom of &lt;em&gt;space&lt;/em&gt; at the expense of the ide
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2017/05/29/access-versus-ownership/#a-divine-model&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;a-divine-model&quot;&gt;A Divine Model&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2017/05/29/access-versus-ownership/#a-divine-model&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;a-divine-model&quot;&gt;A Divine Model&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;For much of His ministry on earth, Jesus was truly homeless. &amp;quot;Foxes have dens
 and birds of the sky have nests, but the Son of Man has no place to lay His
@@ -1109,11 +1109,11 @@ below.&lt;/p&gt;
 </description>
       <pubDate>Mon, 29 May 2017 00:00:00 GMT</pubDate>
       <dc:creator>Neill Robson</dc:creator>
-      <guid>https://neillrobson.com/blog/2017/05/29/access-versus-ownership/</guid>
+      <guid>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2017/05/29/access-versus-ownership/</guid>
     </item>
     <item>
       <title>The Tea</title>
-      <link>https://neillrobson.com/blog/2016/06/15/the-tea/</link>
+      <link>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2016/06/15/the-tea/</link>
       <description>&lt;section&gt;
 &lt;blockquote&gt;
 &lt;p&gt;When in China, drink like the Chinese drink.&lt;/p&gt;
@@ -1125,11 +1125,11 @@ below.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2016/06/15/the-tea/#the-plantation&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;the-plantation&quot;&gt;The Plantation&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2016/06/15/the-tea/#the-plantation&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;the-plantation&quot;&gt;The Plantation&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;The most famous tea in China is without a doubt Longjing (龙井: “dragon well”) green tea. The only place in the world that it is grown is in the rural villages around West Lake in the city of Hangzhou, Zhejiang, China. Tea labeled “Longjing” from any other location (Sichuan, Yunan, etc.) is considered fake. Hangzhou takes their status as the sole producer of authentic Longjing tea very seriously; to visit one of these fabled tea plantations to get firsthand experience of the substance is only natural for any tourist in the area.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160608_161804_HDR.jpg&quot; alt=&quot;Rolling hills of tea bushes&quot; title=&quot;The rolling hills of tea bushes.&quot;&gt;&lt;figcaption&gt;The rolling hills of tea bushes.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160608_161804_HDR.jpg&quot; alt=&quot;Rolling hills of tea bushes&quot; title=&quot;The rolling hills of tea bushes.&quot;&gt;&lt;figcaption&gt;The rolling hills of tea bushes.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;As the bus drove into the countryside, several relatively large houses slid past our view.&lt;/p&gt;
 &lt;p&gt;“Tea farmers,” explained our tour guide, “is one of most rich people in China. Actually only some business men more money than Longjing farmers.”&lt;/p&gt;
@@ -1137,7 +1137,7 @@ below.&lt;/p&gt;
 &lt;p&gt;Oh, how ignorant I was.&lt;/p&gt;
 &lt;p&gt;Arriving at the location where we were to be given a tour of the farming and processing procedures, we stepped off the bus into a humid gray day and meandered over to the nearest Longjing tea bush. They weren’t by any means in short supply; these bushes were about chest high on average and lined every hill and valley we drove through. Seeing the luscious, deep green leaves on the bush we were examining, I wondered why this one hadn’t yet been stripped clean.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160603_150529.jpg&quot; alt=&quot;Tourists picking tea leaves&quot; title=&quot;Tourists love to pretend that they know how to pick tea leaves.&quot;&gt;&lt;figcaption&gt;Tourists love to pretend that they know how to pick tea leaves.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160603_150529.jpg&quot; alt=&quot;Tourists picking tea leaves&quot; title=&quot;Tourists love to pretend that they know how to pick tea leaves.&quot;&gt;&lt;figcaption&gt;Tourists love to pretend that they know how to pick tea leaves.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;“Actually this one already harvested by farmers,” our guide corrected us. “Good quality Longjing tea, only sprout leaves used, maybe one or two on a twig.”&lt;/p&gt;
 &lt;p&gt;We were shown a recently harvested leaf and realized that they were hardly more than sprouts. Leaves any longer than your pinky toe were already too mature, and would be left on the bush until the next season. The ideal Longjing tea leaves, the guide informed us, should look like a small bird’s tongue protruding from its mouth. Me being the pragmatic guy I am, I naturally assumed that this was just a bunch of snobbish talk. However, further research revealed that such picky harvests are in fact vital to creating a tea with the proper chemical balance: extended exposure to the elements produces oxidation which ruins many of the precious nutrients within the leaves.&lt;/p&gt;
@@ -1149,12 +1149,12 @@ below.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2016/06/15/the-tea/#the-demonstration&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;the-demonstration&quot;&gt;The Demonstration&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2016/06/15/the-tea/#the-demonstration&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;the-demonstration&quot;&gt;The Demonstration&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;After strolling around the plantation for a little while, we were escorted into a small building with simple, traditional Chinese architecture, and then through some sliding doors into what looks like a conference room. A long oval table stretches the length of the room, and on one end are situated several dozen bound paper packages and green cans. The group is seated and everyone is given an empty glass.&lt;/p&gt;
 &lt;p&gt;A smartly-dressed young woman enters the room and closes the doors behind her. Taking her place at the head of the conference table with the packages and cans, she proceeds to explain to the group where and how Longjing tea is enjoyed. At the same time, her hands, moving seemingly independent of her mind, begin unwrapping one of the packages and depositing a pinch of the contents into each of our glasses. Boiling water is added, and the Longjing tea in front of each of us begins to steep.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160603_154723.jpg&quot; alt=&quot;A kettle of purple Yixing clay&quot; title=&quot;The taste profile of Longjing tea is supposedly diminished if the beverage is not first steeped in a kettle of purple Yixing clay.&quot;&gt;&lt;figcaption&gt;The taste profile of Longjing tea is supposedly diminished if the beverage is not first steeped in a kettle of purple Yixing clay.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160603_154723.jpg&quot; alt=&quot;A kettle of purple Yixing clay&quot; title=&quot;The taste profile of Longjing tea is supposedly diminished if the beverage is not first steeped in a kettle of purple Yixing clay.&quot;&gt;&lt;figcaption&gt;The taste profile of Longjing tea is supposedly diminished if the beverage is not first steeped in a kettle of purple Yixing clay.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Typically, the highest quality Longjing tea (the first pickings) are reserved specifically for government officials and for gifts distributed by Chinese foreign ambassadors. The little that remains is often auctioned off, yielding prices up to thousands of US dollars for a single gram (hardly enough to make a single glass). Because of its value, a person typically re-uses the same tea leaves in a given glass or thermos for an entire working day, refilling it with boiling water whenever necessary.&lt;/p&gt;
 &lt;p&gt;“Okay, time to begin appreciating Longjing tea,” announces our lecturer. We raise the glasses to our lips, but she scolds us and tells us first to swirl the tea in our glasses and then inhale the steam. …So this stuff really &lt;em&gt;is&lt;/em&gt; supposed to be consumed like wine.&lt;/p&gt;
@@ -1164,7 +1164,7 @@ below.&lt;/p&gt;
 &lt;p&gt;“This cures cataract,” explained our guide. “After look at computer for all day, you should look at Longjing tea instead.”&lt;/p&gt;
 &lt;p&gt;Okay, now it’s definitely time to start drinking it. After blowing the leaves out of the way, we take some tiny sips of the scalding hot liquid and, well, it tastes pretty good! “Collard greens” is still the first thought that comes to my mind, but that isn’t to say that the gustatory experience was unsatisfactory–on the contrary, I greatly enjoy collard greens, and I was perfectly fine drinking collard green broth if that’s what they do here in China.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160603_154144.jpg&quot; alt=&quot;A teacup of pure white jade&quot; title=&quot;If you don&#39;t consume tea from a glass of pure white jade, you&#39;re obviously not worthy of it gracing your lips.&quot;&gt;&lt;figcaption&gt;If you don’t consume tea from a glass of pure white jade, you’re obviously not worthy of it gracing your lips.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160603_154144.jpg&quot; alt=&quot;A teacup of pure white jade&quot; title=&quot;If you don&#39;t consume tea from a glass of pure white jade, you&#39;re obviously not worthy of it gracing your lips.&quot;&gt;&lt;figcaption&gt;If you don’t consume tea from a glass of pure white jade, you’re obviously not worthy of it gracing your lips.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Little did I know how much more this liquid was than simply “collard green broth.”&lt;/p&gt;
 &lt;p&gt;While we were sipping away, our lecturer was busy filling up a glass with her own mixture of substances, while talking away at a pace that would make Mr. Shamwow proud. Beginning with a healthy spoonful of rice, she explained that she was mixing together a scaled-down chemical equivalent of a person’s typical daily diet. She proceeded to add various oils and syrups, ranging from soy sauce to peanut oil to lard to molasses, and mixed the glass’s contents together into a brown mush.&lt;/p&gt;
@@ -1177,11 +1177,11 @@ below.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
-&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/blog/2016/06/15/the-tea/#the-sale&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;the-sale&quot;&gt;The Sale&lt;/h2&gt;
+&lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2016/06/15/the-tea/#the-sale&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;the-sale&quot;&gt;The Sale&lt;/h2&gt;
 &lt;/div&gt;
 &lt;p&gt;Now, I don’t actually know how healthy it is to be drinking a liquid that is capable of extracting any visible presence of salt, sugar, and fat from one’s intestines. On the other hand, we just witnessed what seemed like pure witchcraft, and not one of us could claim to be left unaffected by the dramatic performance.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160603_154323.jpg&quot; alt=&quot;An opulent tea room&quot; title=&quot;How I imagine the Count of Monte Cristo&#39;s tea room is decorated.&quot;&gt;&lt;figcaption&gt;How I imagine the Count of Monte Cristo’s tea room is decorated.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160603_154323.jpg&quot; alt=&quot;An opulent tea room&quot; title=&quot;How I imagine the Count of Monte Cristo&#39;s tea room is decorated.&quot;&gt;&lt;figcaption&gt;How I imagine the Count of Monte Cristo’s tea room is decorated.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Our presenter, seeing our wide eyes and gaping mouths, knew it was time to make her strike.&lt;/p&gt;
 &lt;p&gt;An assistant was called in and the two women began throwing open the brown paper packages, revealing every shade of green Longjing leaves imaginable. The now mystical scent of collard greens filled the locked, windowless conference room. The orchestrator of the presentation slipped on a pair of skin-tight white gloves and picked up one of the green canisters.&lt;/p&gt;
@@ -1196,86 +1196,86 @@ below.&lt;/p&gt;
 &lt;p&gt;“You not barter here, we set fix price. For high-quality Longjing tea, one canister, regular price 600 yuan. We give to you half price, 300 yuan. You may pay RMB, USD, or the credit card.”&lt;/p&gt;
 &lt;p&gt;We all began to cast sidelong glances at each other as we shuffled through our wallets. This stuff obviously wasn’t the “first picking” seen at auctions–the price was too unbelievably low for that–but nonetheless, we had just seen with our eyes and tasted with our tongues the substance that was now being packaged before us, so we had little excuse to object to the trade.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160603_164655.jpg&quot; alt=&quot;Compressed tea cakes&quot; title=&quot;Compressed tea cakes, with price tags running around $240-250.&quot;&gt;&lt;figcaption&gt;Compressed tea cakes, with price tags running around $240-250.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160603_164655.jpg&quot; alt=&quot;Compressed tea cakes&quot; title=&quot;Compressed tea cakes, with price tags running around $240-250.&quot;&gt;&lt;figcaption&gt;Compressed tea cakes, with price tags running around $240-250.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Large stacks of bills started trading hands. As I watched my peers, my only thought was how illicit this whole process seemed to be: sitting around a conference table in a locked room with no decor, hungrily observing gloved hands pack mysterious dried leaves into sealed canisters to be passed along to a customer for a large sum. When we were finally released into the open air again, hardly anybody carried their purchases in their bare hands: the vast majority left these goods tucked away with care in the bottom of a purse or backpack. Some people could be observed absentmindedly tapping their bags occasionally to reassure themselves that their purchase had not left them.&lt;/p&gt;
 &lt;p&gt;I only hope that we are not caught in customs returning home.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;And that’s the story of my experience with the culture of tea in China. Needless to say, the process left quite a significant impression on me, and I definitely believe that, regardless of its mystical and prodigious alleged properties, it will take a much more extensive role in my diet back home in the United States!&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160603_151658.jpg&quot; alt=&quot;Historic tea garden advertisement&quot; title=&quot;Hongchow&#39;s Mur Kee Tea Gardens: drinks so good, they&#39;ll make you wanna slap yo&#39; momma.&quot;&gt;&lt;figcaption&gt;Hongchow’s Mur Kee Tea Gardens: drinks so good, they’ll make you wanna slap yo’ momma.&lt;/figcaption&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160603_151658.jpg&quot; alt=&quot;Historic tea garden advertisement&quot; title=&quot;Hongchow&#39;s Mur Kee Tea Gardens: drinks so good, they&#39;ll make you wanna slap yo&#39; momma.&quot;&gt;&lt;figcaption&gt;Hongchow’s Mur Kee Tea Gardens: drinks so good, they’ll make you wanna slap yo’ momma.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;So far, I’ve located green tea popsicles, green tea toothpaste, and green tea ice cream here in China. There’s no doubt that I’ll be paying premium to get my hands on the stuff back home. Say goodbye to my poor wallet…&lt;/p&gt;
 &lt;/section&gt;
 </description>
       <pubDate>Wed, 15 Jun 2016 08:16:38 GMT</pubDate>
       <dc:creator>Neill Robson</dc:creator>
-      <guid>https://neillrobson.com/blog/2016/06/15/the-tea/</guid>
+      <guid>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2016/06/15/the-tea/</guid>
     </item>
     <item>
       <title>The Environment</title>
-      <link>https://neillrobson.com/blog/2016/06/09/the-environment/</link>
+      <link>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2016/06/09/the-environment/</link>
       <description>&lt;section&gt;
 &lt;p&gt;So many of my experiences in Hangzhou are relatively small excursions: individually, they aren’t worth an entire blog post, but they amount to quite a bit when added up! At the same time, a “Miscellaneous” blog post should honestly be saved for the end of a trip, so I’ll try my best to theme this one as more nature-related.  Indeed, the vast majority of Hangzhou’s attractions are outdoors–a characteristic that I greatly admire!&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160514_145419.jpg&quot; alt=&quot;house of courtyards&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160514_145419.jpg&quot; alt=&quot;house of courtyards&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Near the beginning of our trip we visited a Chinese mansion exhibiting some of the older architectural styles of China. The Chinese culture of the time took an incredible amount of liberties with indoor/outdoor spaces to create an astonishingly beautiful effect. Areas such as the ones pictured above and below were entirely “inside” the house, and doors could just as easily lead to artificial caves as they could lead to “rooms” as we think of them in the US.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160514_151809.jpg&quot; alt=&quot;stone path over river&quot;&gt;&lt;/figure&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160514_155700.jpg&quot; alt=&quot;floor plan&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160514_151809.jpg&quot; alt=&quot;stone path over river&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160514_155700.jpg&quot; alt=&quot;floor plan&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Above is a floor plan of the house. As you can see, most places are naturally exposed to the elements, and roofs only exist over the edges of major rooms.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160514_144930.jpg&quot; alt=&quot;kitchen&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160514_144930.jpg&quot; alt=&quot;kitchen&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Also, your modern American “dream kitchen” can’t shake a stick at the massive size of the facilities in this bachelor’s place. There are full ovens on both sides of that marble counter on the right.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160514_144733.jpg&quot; alt=&quot;bonsai&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160514_144733.jpg&quot; alt=&quot;bonsai&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;And yeah, they also grew bonsai trees to obnoxiously large sizes. (Thanks to Michael for posing next to this one, for scale!)&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160518_102120.jpg&quot; alt=&quot;lilypad landscape&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160518_102120.jpg&quot; alt=&quot;lilypad landscape&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Hangzhou is also known for its enormous and beautiful botanical gardens, of which I took quite a few photos.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160518_102801.jpg&quot; alt=&quot;fake deer&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160518_102801.jpg&quot; alt=&quot;fake deer&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Although they may be known for their flowers, the botanical gardens certainly aren’t known for their wildlife!&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160518_102527.jpg&quot; alt=&quot;boat&quot;&gt;&lt;/figure&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160518_104013.jpg&quot; alt=&quot;circle door&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160518_102527.jpg&quot; alt=&quot;boat&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160518_104013.jpg&quot; alt=&quot;circle door&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Doors are always a favorite posing spot for us.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160518_105418-1.jpg&quot; alt=&quot;lake, no lilies&quot;&gt;&lt;/figure&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160518_111110.jpg&quot; alt=&quot;rock garden&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160518_105418-1.jpg&quot; alt=&quot;lake, no lilies&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160518_111110.jpg&quot; alt=&quot;rock garden&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;When you can’t grow flowers, you can always fall back on your splendid rock collection!&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160522_152556-1.jpg&quot; alt=&quot;distant pagoda&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160522_152556-1.jpg&quot; alt=&quot;distant pagoda&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;We also went out to quite a few temples and pagodas–some more accessible than others. We found that when it comes to trails, the Chinese have very low tolerance for handicap-accessibility or even general safety measures. Most of the time, the only precaution taken would be a sign such as the one below, ordering people not to climb. We can see how well that went:&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160522_152915.jpg&quot; alt=&quot;don&#39;t climb&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160522_152915.jpg&quot; alt=&quot;don&#39;t climb&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Some people in our group were a bit more adventurous than I upon these rocks; at first I thought it was because they couldn’t read the warnings in Chinese, but I was quickly put in my place.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160522_154755.jpg&quot; alt=&quot;cherished life&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160522_154755.jpg&quot; alt=&quot;cherished life&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;(Thanks for the photo op, Patrick!)&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160522_154447_PN.jpg&quot; alt=&quot;xihu panorama&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160522_154447_PN.jpg&quot; alt=&quot;xihu panorama&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;But climbing, of course, is where all the best views are.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160522_154502.jpg&quot; alt=&quot;Eischen climbing&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160522_154502.jpg&quot; alt=&quot;Eischen climbing&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;And when your professors do it, it’s hard to overcome the social pressure, you know?&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160525_140325.jpg&quot; alt=&quot;stairs&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160525_140325.jpg&quot; alt=&quot;stairs&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Anyway, the climbing trouble doesn’t end when you get to the pagoda…&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160525_141904.jpg&quot; alt=&quot;doorway&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160525_141904.jpg&quot; alt=&quot;doorway&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;especially not for tall guys like me.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160525_140852_LL.jpg&quot; alt=&quot;roofing&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160525_140852_LL.jpg&quot; alt=&quot;roofing&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;But the fabulously decorated walls and roofs encourage you as you cross the threshold of the 72nd floor on your way to the 134th…&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160525_141125_HDR.jpg&quot; alt=&quot;power lines&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160525_141125_HDR.jpg&quot; alt=&quot;power lines&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Yeah, you are occasionally greeted with power lines or some other unfortunate presence in an otherwise serene environment, but I actually found the vast scale that they imply to be quite photogenic!&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160525_141817.jpg&quot; alt=&quot;tiny farm&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160525_141817.jpg&quot; alt=&quot;tiny farm&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;You take whatever sunlight you can get and make the most of it, you know?&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160525_144035.jpg&quot; alt=&quot;tiny pagoda&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160525_144035.jpg&quot; alt=&quot;tiny pagoda&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Back on the ground floor of the place, I felt a lot taller than when I first arrived. I’m not sure if that’s the psychological effect of climbing the thing, or because…&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160525_144430_BF.jpg&quot; alt=&quot;hand on the stairs&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160525_144430_BF.jpg&quot; alt=&quot;hand on the stairs&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;…there were actually a ton of mini pagodas scattered around the big one!&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160525_144124_BF.jpg&quot; alt=&quot;giant&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160525_144124_BF.jpg&quot; alt=&quot;giant&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Fun times being a giant.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160525_145121_BF.jpg&quot; alt=&quot;elephant&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160525_145121_BF.jpg&quot; alt=&quot;elephant&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Tried to use a selfie stick here, but I’m still too awkward with handling it. …Look at the expression on that elephant. He’s so judgmental! All like, “is this dude seriously using a selfie stick to take a photo with me? What a flippant, obnoxious foreigner! I would &lt;em&gt;never&lt;/em&gt; attempt the same thing with &lt;em&gt;my&lt;/em&gt; nose if I ever visited &lt;em&gt;his&lt;/em&gt; country! Sheesh, what an American.”&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160603_144337.jpg&quot; alt=&quot;snail and hand&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160603_144337.jpg&quot; alt=&quot;snail and hand&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;In the US, when it rains, worms come out and cover the sidewalks. In China, the equivalent are the snails!&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160604_072407_HDR.jpg&quot; alt=&quot;clear day picture&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160604_072407_HDR.jpg&quot; alt=&quot;clear day picture&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;Just think of all the beautiful sunrises that the people in the US missed because they were busy watching the sunset over there!&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/assets/images/2016/06/P_20160526_165525_HDR.jpg&quot; alt=&quot;foggy day picture&quot;&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/assets/images/2016/06/P_20160526_165525_HDR.jpg&quot; alt=&quot;foggy day picture&quot;&gt;&lt;/figure&gt;
 &lt;p&gt;It’s just as beautiful on a foggy day too–don’t get me wrong.&lt;/p&gt;
 &lt;p&gt;Okay, that’s all for this blog! The next post will hopefully feature a pharmacy, tea museum, and underground bunker. See you next time!&lt;/p&gt;
 &lt;/section&gt;
 </description>
       <pubDate>Thu, 09 Jun 2016 10:03:11 GMT</pubDate>
       <dc:creator>Neill Robson</dc:creator>
-      <guid>https://neillrobson.com/blog/2016/06/09/the-environment/</guid>
+      <guid>https://neillrobson.com/lookasides/neillrobson.github.io/tufte-restyle-18/blog/2016/06/09/the-environment/</guid>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Neill Robson's Website</title>
+
+    <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+
+      function switchLight() {
+        localStorage.setItem("mode", "light");
+        document.getElementById("theme-light").checked = true;
+      }
+
+      function switchDark() {
+        localStorage.setItem("mode", "dark");
+        document.getElementById("theme-dark").checked = true;
+      }
+
+      function switchAuto() {
+        localStorage.removeItem("mode");
+        document.getElementById("theme-system").checked = true;
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const mode = localStorage.getItem("mode");
+
+        if (mode === "light") switchLight();
+        if (mode === "dark") switchDark();
+      });
+    </script>
+
+    <meta name="description" content="The blog and portfolio of a software developer.">
+    <meta name="author" content="Neill Robson">
+
+    <meta property="og:title" content="Neill Robson's Website">
+    <meta property="og:description" content="The blog and portfolio of a software developer.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://neillrobson.com/blog/2022/11/01/typescripts-skeleton-key/">
+    <link rel="canonical" href="https://neillrobson.com/blog/2022/11/01/typescripts-skeleton-key/">
+
+    
+
+    <link rel="shortcut icon" href="/lookasides/neillrobson.github.io/css-cleanup-19/assets/icon/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/lookasides/neillrobson.github.io/css-cleanup-19/assets/style/main.css">
+    <link rel="stylesheet" href="/lookasides/neillrobson.github.io/css-cleanup-19/assets/style/social.css">
+    <link rel="stylesheet" href="/lookasides/neillrobson.github.io/css-cleanup-19/assets/style/code.css">
+</head>
+
+
+  <body>
+    <input type="radio" name="color-theme" value="system" checked="" onchange="switchAuto()" id="theme-system">
+    <input type="radio" name="color-theme" value="dark" onchange="switchDark()" id="theme-dark">
+    <input type="radio" name="color-theme" value="light" onchange="switchLight()" id="theme-light">
+    <div class="container">
+      <div class="header">
+  <div id="title">
+    
+    <img id="logo" class="rounded" src="https://gravatar.com/avatar/5264adfae13785676b4228ce2784dc92?s=64&d=https%3A%2F%2Fneillrobson.com%2Fassets%2Fimages%2F2023-profile.jpg" alt="Neill Robson">
+    Neill Robson's Website
+  </div>
+  <div class="nav">
+    <div class="links">
+      
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/" title="About">About</a>
+      
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/now" title="Now">Now</a>
+      
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/blog" title="Blog">Blog</a>
+      
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/archive" title="Archive">Archive</a>
+      
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/projects" title="Projects">Projects</a>
+      
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/contact" title="Contact">Contact</a>
+      
+    </div>
+    <div class="utils">
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/feed.xml" title="RSS">RSS</a>
+      <fieldset id="theme-switcher" class="visible">
+        <legend>Theme</legend>
+        <label for="theme-system">
+        <svg id="icon-system" viewBox="0 0 32 32" fill="currentColor" role="img">
+          <title>System default theme</title>
+          <path d="M16 9c3.9 0 7 3.1 7 7s-3.1 7-7 7"></path><path d="M16 .5C7.4.5.5 7.4.5 16S7.4 31.5 16 31.5 31.5 24.6 31.5 16 24.6.5 16 .5zm0 28.1V23c-3.9 0-7-3.1-7-7s3.1-7 7-7V3.4C23 3.4 28.6 9 28.6 16S23 28.6 16 28.6z"></path>
+        </svg>
+        </label>
+
+        <label for="theme-dark">
+        <svg id="icon-moon" viewBox="0 0 16 16" fill="none" role="img">
+          <title>Dark theme</title>
+          <path d="M2 7.63261C2 11.1492 4.77936 14 8.20787 14C10.8473 14 13.1019 12.3105 14 9.92836C13.2887 10.271 12.4945 10.4626 11.6567 10.4626C8.60912 10.4626 6.13858 7.92853 6.13858 4.80265C6.13858 3.49533 6.5707 2.29154 7.29643 1.33334C4.30002 1.78554 2 4.43357 2 7.63261Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        </label>
+
+        <label for="theme-light">
+        <svg id="icon-sun" viewBox="0 0 16 16" fill="none" role="img">
+          <title>Light theme</title>
+          <path d="M7.99968 13.3333L7.99967 14.6667M7.99968 1.33334L7.99968 2.66668M13.333 8.00001H14.6663M1.33301 8.00001H2.66634M11.9997 11.9997L12.9997 12.9997M2.99967 2.99967L3.99969 3.9997M11.9997 4.00001L12.9997 3.00001M2.99967 13L3.99967 12M11.333 8.00001C11.333 9.84096 9.84062 11.3333 7.99967 11.3333C6.15872 11.3333 4.66634 9.84096 4.66634 8.00001C4.66634 6.15906 6.15872 4.66668 7.99967 4.66668C9.84062 4.66668 11.333 6.15906 11.333 8.00001Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        </label>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        
+<div class="entry">
+    <div class="date left margin">
+        <a class="small" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2022/11/01/typescripts-skeleton-key/">November 1, 2022</a>
+    </div>
+    <h1>Typescript's Skeleton Key</h1>
+
+    <section>
+<p>The intrepid Typescript developer will find several types that, frankly, make no sense whatsoever in real life. A “string” or “number” is perfectly reasonable, but what is an “unknown” or “never” type?</p>
+<p>More importantly, what in the world is a “keyof never”?</p>
+<div class="margin right"><p>In case the introduction didn’t make the fact clear, this post will be pretty technical. Be forewarned!</p>
+</div><p>First, we’ll need a bit of background on how types can be combined in Typescript to create new, more complicated types. The rules take after formal logic and set theory, but the end result is still pretty intuitive.</p>
+<p>Let’s pretend we have two plain object types, <code>Vehicle</code> and <code>Animal</code>:</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+    speed<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    legs<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</section>
+<section>
+<div class="section-link">
+<a class="no-tufte-underline" href="#union"></a><h2 id="union">Union</h2>
+</div>
+<p>Perhaps we also want a function that accepts either a <code>Vehicle</code> or <code>Animal</code> and returns its name. How would we write that function and its signature?</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">getName</span><span class="token punctuation">(</span>entity<span class="token operator">:</span> Vehicle <span class="token operator">|</span> Animal<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> entity<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Notice a few things about this function:</p>
+<ul>
+<li>
+<p>The parameter can either be a <code>Vehicle</code> or <code>Animal</code>, <em>but not both</em>. In other words, if you pass in something that has a name <em>and</em> speed <em>and</em> legs, you’ll get an error.</p>
+</li>
+<li>
+<p>Because the object can only be one or the other type, the only property that is guaranteed to exist on the object is <code>name</code>. If we tried to access any other property on the object (without additional typecasting or narrowing), again, we’d get an error.</p>
+</li>
+</ul>
+<p>The <strong>union</strong> type operator <code>|</code> is used when we want instances that are exactly one of the component types specified.</p>
+</section>
+<section>
+<div class="section-link">
+<a class="no-tufte-underline" href="#intersection"></a><h2 id="intersection">Intersection</h2>
+</div>
+<p>Now, we could also have an object (one that is currently untyped) called “horse”:</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> horse <span class="token operator">=</span> <span class="token punctuation">{</span>
+    speed<span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+    legs<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">"Spirit"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>The horse is both a <code>Vehicle</code> and an <code>Animal</code>, because it literally has all of the fields necessary for both types. We can declare that using the following syntax:</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">type</span> <span class="token class-name">Steed</span> <span class="token operator">=</span> Vehicle <span class="token operator">&amp;</span> Animal<span class="token punctuation">;</span>
+<span class="token keyword">const</span> horse<span class="token operator">:</span> Steed<span class="token punctuation">;</span></code></pre>
+<p>A <code>Steed</code> can be passed into the <code>getName</code> function, and indeed, it can be used anywhere anyone asks for just a <code>Vehicle</code>, or just an <code>Animal</code>, because a <code>Steed</code> is truly both. That said, any variable defined as a <code>Steed</code> must have all the fields of both component types: we couldn’t assign “just” an <code>Animal</code> to a variable of the <code>Steed</code> type.</p>
+<p>The <strong>intersection</strong> type operator <code>&amp;</code> is used when we want instances that can serve as <em>any</em> of the component types specified at <em>all</em> times.</p>
+</section>
+<section>
+<div class="section-link">
+<a class="no-tufte-underline" href="#unknown-and-never"></a><h2 id="unknown-and-never">Unknown and Never</h2>
+</div>
+<p>Among Typescript’s special-case built-in types are two polar opposites, <code>unknown</code> and <code>never</code>. What do those types mean?</p>
+<p>If a variable is an <code>unknown</code> type, then you can assign any value to it. <em>Anything. Always.</em> Likewise, a variable with a <code>never</code> type can not have anything assigned to it. <em>Nothing. At all.</em></p>
+<p>The cases where you’d use either of these types are somewhat esoteric, and I won’t make a comprehensive list here. However, here are a few simpler motivating examples:</p>
+<ul>
+<li>
+<p>A function that never returns (e.g. always throws an error or goes into an infinite loop) has a return type of, you guessed it, <code>never</code>. This signature is different from a return type of <code>void</code>, i.e. when the function does call <code>return;</code> with no value.</p>
+</li>
+<li>
+<p>A function parameter that could be a variety of things, determined through conditional checks (e.g. <code>if (param === undefined)</code>), could have a type of <code>unknown</code> if we were too lazy to create a more specific type.</p>
+</li>
+</ul>
+<h3>Relation to Set Theory</h3>
+<p>How might we define <code>unknown</code> and <code>never</code> with our union and intersection operators? They would both be infinite sets—impractical to write explicitly in code—but the thought exercise will help us understand some interactions described later in this post.</p>
+<p>The easier type to conceptualize this way is <code>unknown</code>. Consider: if we want the ability to assign any of three different types to a variable, what syntax would we use? Based on our <code>getName</code> function parameter, we’d do something like <code>A | B | C</code>. For five different types, we’d have <code>A | B | C | D | E</code>… and for truly <em>any type at all</em>, we’d have an infinitely-long union of types.</p>
+<p>The more difficult type to discern in this way is <code>never</code>—although, given the parallels so far, the reader might be able to guess where we’re going. When we defined <code>Steed</code> as <code>Vehicle &amp; Animal</code>, we could no longer assign <code>Vehicle</code> or <code>Animal</code> alone to variables of that type. Furthermore, if we created a longer “intersection type” <code>A &amp; B &amp; C</code>, with more components, we’d get an increasingly restricted type. It follows that a variable with an infinitely-long intersection type could <em>never</em> take a value, because no value would have all the properties required of the type.</p>
+<p>So, in summary: <code>unknown</code> is an infinite union of types; <code>never</code> is an infinite intersection of types.</p>
+</section>
+<section>
+<div class="section-link">
+<a class="no-tufte-underline" href="#the-%E2%80%9Ckeyof%E2%80%9D-utility"></a><h2 id="the-%E2%80%9Ckeyof%E2%80%9D-utility">The “keyof” Utility</h2>
+</div>
+<p>This little operator has a pretty simple use: it creates a type consisting of a <em>union</em> of the possible keys for an object.</p>
+<p>Some code is worth a thousand words:</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    legs<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Equivalent to ('name' | 'legs')</span>
+<span class="token keyword">type</span> <span class="token class-name">AnimalKey</span> <span class="token operator">=</span> <span class="token keyword">keyof</span> Animal<span class="token punctuation">;</span></code></pre>
+<p>The union won’t always just be of strings, either: an array (for example) could yield numeric keys in that union.</p>
+</section>
+<section>
+<div class="section-link">
+<a class="no-tufte-underline" href="#keyof-with-unions-and-intersections"></a><h2 id="keyof-with-unions-and-intersections"><code>keyof</code> with Unions and Intersections</h2>
+</div>
+<p>Think of our old example types of <code>Vehicle</code>, <code>Animal</code>, and <code>Steed</code>. How would <code>keyof</code> behave with the union and intersection operators?</p>
+<ul>
+<li>
+<p><code>keyof (Vehicle | Animal)</code> would only yield <code>'name'</code>. Does that feel a bit odd? Remember, <code>Vehicle | Animal</code> means that each value can only be one or the other type at any given time. When we apply <code>keyof</code>, the only guaranteed key on the object is the one shared between both types. That’s also why our function <code>getName</code> was restricted to referencing the <code>name</code> property.</p>
+</li>
+<li>
+<p><code>keyof Steed</code> (i.e. <code>keyof (Vehicle &amp; Animal)</code>) would naturally yield all three keys, <code>'name' | 'speed' | 'legs'</code>.</p>
+</li>
+</ul>
+<p>A union type typically <em>decreases</em> the number of valid keys, while an intersection type typically <em>increases</em> the number of valid keys.</p>
+</section>
+<section>
+<div class="section-link">
+<a class="no-tufte-underline" href="#putting-it-all-together"></a><h2 id="putting-it-all-together">Putting it all together</h2>
+</div>
+<p>We have enough information now to consider the original question: What is <code>keyof never</code>? Or <code>keyof unknown</code>? The answer, while unintuitive, is quite logical!</p>
+<p>Let’s start again with <code>unknown</code>:</p>
+<ul>
+<li>
+<p><code>unknown</code> is an infinite union of types</p>
+</li>
+<li>
+<p>a union type typically decreases the number of valid keys</p>
+</li>
+<li>
+<p><code>keyof unknown</code> is an infinitely-shrunk set of keys, i.e. an empty set</p>
+</li>
+</ul>
+<p>The set theory explanation is still confusing, so think about it on a natural-language level. What property is valid for both Vehicles, and Animals, and Reports, and Electrons, and Arrays, and Numbers, and Strings, and anything else you can think of? True, a variable of type <code>unknown</code> will only ever be one of those actual types at any given time, but (as we saw in the <code>getName</code> function) we are only allowed to use keys that are shared across all possible types. The question we’re answering with <code>keyof unknown</code> is “what keys can be used at any time on values of any type anywhere in Typescript?”</p>
+<blockquote>
+<p>Therefore, <code>keyof unknown</code> is <code>never</code>.</p>
+</blockquote>
+<p>What about <code>keyof never</code>?</p>
+<ul>
+<li>
+<p><code>never</code> is an infinite intersection of types</p>
+</li>
+<li>
+<p>an intersection type typically increases the number of valid keys</p>
+</li>
+<li>
+<p><code>keyof never</code> is the maximal set of keys possible in Typescript, i.e. <code>String | Number | Symbol</code></p>
+</li>
+</ul>
+<p>When we combined two types, we got a type that had all the keys of both component types—even though we could no longer <em>assign</em> values of either component type to the intersection type. As we continue expanding that intersection type, we cover more and more keys, while making it more and more difficult to assign any value to the type… until we reach <code>never</code>. The question we’re answering with <code>keyof never</code> is “what keys could possibly, at some point, be syntactically valid in Typescript?”</p>
+<blockquote>
+<p>Therefore, <code>keyof never</code> is <code>String | Number | Symbol</code>.</p>
+</blockquote>
+</section>
+<section>
+<div class="section-link">
+<a class="no-tufte-underline" href="#why-do-we-even-need-this%3F"></a><h2 id="why-do-we-even-need-this%3F">Why do we even need this?</h2>
+</div>
+<p>Admittedly, it’s mostly a fun thought exercise for me! But there is some marginal benefit.</p>
+<p>If you are trying to define a variant of the <code>Record</code> type and want to provide no restrictions on what keys are used, you can use the generic type <code>K extends keyof never</code> to ensure that all valid key types are allowed (and, at the same time, preventing syntactically invalid key types). Granted, you could also use the more explicit <code>String | Number | Symbol</code>, and you’d be 99.9% sure to cover everything. However, if the language ever evolves in the future to allow a wider (or—somehow—narrower) set of key types, <code>keyof never</code> would by definition pick up on the change immediately, with no intervention necessary from the developer.</p>
+<p>Crucially, I must urge the reader to not take this rationalization to their supervisors and tech leads in an attempt to justify unreadable code. The vast majority of developers will find it much easier to understand <code>String | Number | Symbol</code>. Saving that value in a readily-accessible type alias, with an explanatory code comment, is arguably much more maintainable than throwing <code>keyof never</code> everywhere. However, for those occasions when you see the latter in a codebase, and you’re confused as to how in the world that skeleton key works, think back to set theory. You just might be able to put yourself back on track!</p>
+</section>
+
+    
+        <br>
+        <p>
+            
+                
+            
+                
+                    <a class="small tag" href="/lookasides/neillrobson.github.io/css-cleanup-19/tag/software">software</a>
+                
+            
+        </p>
+    
+
+    <div class="clear"></div>
+
+    
+        <div id="disqus_thread"></div>
+<script>
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+ */
+var disqus_config = function () {
+
+this.page.url = "https://neillrobson.com/blog/2022/11/01/typescripts-skeleton-key/";  // Your page's canonical URL variable
+this.page.identifier = "/blog/2022/11/01/typescripts-skeleton-key"; // Your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://neillrobson.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+
+    
+    
+
+    
+        <hr class="full">
+    
+    
+        <a class="halfWidth left previousEntry" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2020/11/23/grad-school-like-im-five/">
+            <h5>Previous post</h5>
+            <span class="title">Grad School Like I'm Five: Buffer Overflow</span>
+            <span class="summary"> According to GitHub, I’ve written approximately 6,000 lines of code over the course of the past four months (welcome to grad school!). The question is, can I explain all of the stuff I wrote? </span>
+        </a>
+    
+    
+        <a class="left halfWidth nextEntry" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2023/03/06/invisalign-of-the-heart/">
+            <h5>Next post</h5>
+            <span class="title">Invisalign of the Heart</span>
+            <span class="summary"> For the second time in my life, I am undergoing the tedious and painful experience of tooth re-alignment. As a coping mechanism, why not pontificate on how Invisalign can serve as a spiritual allegory? </span>
+        </a>
+    
+</div>
+
+
+        <div class="clear"></div>
+      </div>
+
+      <div class="footer">
+  <small class="copyright">
+    &copy; 2025 Neill Robson. Layout inspired by
+    <a href="https://blot.im/" target="_blank">Blot</a>.
+    <br>
+    This site is hosted on
+    <a href="https://github.com" target="_blank">GitHub</a> and built with
+    <a href="https://www.11ty.dev/" target="_blank">Eleventy</a>. Icons by
+    <a href="https://icons8.com" target="_blank">Icons8</a>.
+  </small>
+</div>
+
+    </div>
+  </body>
+</html>

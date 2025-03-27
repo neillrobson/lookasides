@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Neill Robson's Website</title>
+
+    <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+
+      function switchLight() {
+        localStorage.setItem("mode", "light");
+        document.getElementById("theme-light").checked = true;
+      }
+
+      function switchDark() {
+        localStorage.setItem("mode", "dark");
+        document.getElementById("theme-dark").checked = true;
+      }
+
+      function switchAuto() {
+        localStorage.removeItem("mode");
+        document.getElementById("theme-system").checked = true;
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const mode = localStorage.getItem("mode");
+
+        if (mode === "light") switchLight();
+        if (mode === "dark") switchDark();
+      });
+    </script>
+
+    <meta name="description" content="The blog and portfolio of a software developer.">
+    <meta name="author" content="Neill Robson">
+
+    <meta property="og:title" content="Neill Robson's Website">
+    <meta property="og:description" content="The blog and portfolio of a software developer.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://neillrobson.com/blog/2016/05/19/the-middle-country/">
+    <link rel="canonical" href="https://neillrobson.com/blog/2016/05/19/the-middle-country/">
+
+    
+
+    <link rel="shortcut icon" href="/lookasides/neillrobson.github.io/css-cleanup-19/assets/icon/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/lookasides/neillrobson.github.io/css-cleanup-19/assets/style/main.css">
+    <link rel="stylesheet" href="/lookasides/neillrobson.github.io/css-cleanup-19/assets/style/social.css">
+    <link rel="stylesheet" href="/lookasides/neillrobson.github.io/css-cleanup-19/assets/style/code.css">
+</head>
+
+
+  <body>
+    <input type="radio" name="color-theme" value="system" checked="" onchange="switchAuto()" id="theme-system">
+    <input type="radio" name="color-theme" value="dark" onchange="switchDark()" id="theme-dark">
+    <input type="radio" name="color-theme" value="light" onchange="switchLight()" id="theme-light">
+    <div class="container">
+      <div class="header">
+  <div id="title">
+    
+    <img id="logo" class="rounded" src="https://gravatar.com/avatar/5264adfae13785676b4228ce2784dc92?s=64&d=https%3A%2F%2Fneillrobson.com%2Fassets%2Fimages%2F2023-profile.jpg" alt="Neill Robson">
+    Neill Robson's Website
+  </div>
+  <div class="nav">
+    <div class="links">
+      
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/" title="About">About</a>
+      
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/now" title="Now">Now</a>
+      
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/blog" title="Blog">Blog</a>
+      
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/archive" title="Archive">Archive</a>
+      
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/projects" title="Projects">Projects</a>
+      
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/contact" title="Contact">Contact</a>
+      
+    </div>
+    <div class="utils">
+      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/feed.xml" title="RSS">RSS</a>
+      <fieldset id="theme-switcher" class="visible">
+        <legend>Theme</legend>
+        <label for="theme-system">
+        <svg id="icon-system" viewBox="0 0 32 32" fill="currentColor" role="img">
+          <title>System default theme</title>
+          <path d="M16 9c3.9 0 7 3.1 7 7s-3.1 7-7 7"></path><path d="M16 .5C7.4.5.5 7.4.5 16S7.4 31.5 16 31.5 31.5 24.6 31.5 16 24.6.5 16 .5zm0 28.1V23c-3.9 0-7-3.1-7-7s3.1-7 7-7V3.4C23 3.4 28.6 9 28.6 16S23 28.6 16 28.6z"></path>
+        </svg>
+        </label>
+
+        <label for="theme-dark">
+        <svg id="icon-moon" viewBox="0 0 16 16" fill="none" role="img">
+          <title>Dark theme</title>
+          <path d="M2 7.63261C2 11.1492 4.77936 14 8.20787 14C10.8473 14 13.1019 12.3105 14 9.92836C13.2887 10.271 12.4945 10.4626 11.6567 10.4626C8.60912 10.4626 6.13858 7.92853 6.13858 4.80265C6.13858 3.49533 6.5707 2.29154 7.29643 1.33334C4.30002 1.78554 2 4.43357 2 7.63261Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        </label>
+
+        <label for="theme-light">
+        <svg id="icon-sun" viewBox="0 0 16 16" fill="none" role="img">
+          <title>Light theme</title>
+          <path d="M7.99968 13.3333L7.99967 14.6667M7.99968 1.33334L7.99968 2.66668M13.333 8.00001H14.6663M1.33301 8.00001H2.66634M11.9997 11.9997L12.9997 12.9997M2.99967 2.99967L3.99969 3.9997M11.9997 4.00001L12.9997 3.00001M2.99967 13L3.99967 12M11.333 8.00001C11.333 9.84096 9.84062 11.3333 7.99967 11.3333C6.15872 11.3333 4.66634 9.84096 4.66634 8.00001C4.66634 6.15906 6.15872 4.66668 7.99967 4.66668C9.84062 4.66668 11.333 6.15906 11.333 8.00001Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        </label>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        
+<div class="entry">
+    <div class="date left margin">
+        <a class="small" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2016/05/19/the-middle-country/">May 19, 2016</a>
+    </div>
+    <h1>The Middle Country</h1>
+
+    <section>
+<p>Who would have guessed that one day I would be saying hello from China?</p>
+<p>Over the next few weeks, I’ll be doing my best to chronicle my journey through a Study Abroad experience in Hangzhou, across the world from my Raleigh hometown.  As my first experience truly “out of the country,” it’s quite a giant leap from the comfortable North Carolina home I’m used to. But how much of the place we call our home floats beyond our consciousness until we are separated from it (and thereby made aware of it) by another way of life? That idea is what we put to the test when we embark on a journey such as this. As the famous Chinese-American geographer said,</p>
+<blockquote>
+<p>To identify wholly with the ambiance of a place is to lose the sense of its unique identity, which is revealed only when one can also see it from the outside. …The sense of place is perhaps never more acute than when one is homesick, and one can only be homesick when one is no longer at home. <cite>Yi-Fu Tuan</cite></p>
+</blockquote>
+</section>
+<section>
+<div class="section-link">
+<a class="no-tufte-underline" href="#the-capital"></a><h2 id="the-capital">The Capital</h2>
+</div>
+<p>This journey begins in Beijing.</p>
+<p>If anybody ever tells you that “everything is bigger in Texas,” you can respond with confidence that “everything is bigg<em>est</em> in Beijing.” Unfortunately, pictures truly cannot capture the prodigious nature of this city’s architecture and history, especially not when they are shot by an amateur such as myself, but one cannot pass through this home of over 20 million people without making a few attempts.</p>
+<figure><img src="/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2016/05/P_20160511_080002-2.jpg" alt="The airport"></figure>
+<p>The airport above covers over 3700 acres of land, roughly one-eighth the size of Raleigh. At 8:30pm on a Wednesday evening, it’s empty and quiet enough to hear the ghosts of the 2008 Olympic Games (for whom the airport was built) jostling their way into the city.</p>
+<figure><img src="/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2016/05/P_20160512_085211.jpg" alt="Tiananmen Square"></figure>
+<p>The city square is also the size of many, many football fields. Beijing, unlike American cities, does not boast its size in terms of height, but in terms of square area. Raleigh has one belt line; Beijing has six, with a seventh under construction. You can cross Raleigh in half an hour on a bad day; multiply that by five, and you might be on the other side of Beijing.</p>
+<figure><img src="/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2016/05/P_20160512_093954.jpg" alt="Forbidden Selfie"></figure>
+<p>At this point in the trip, I was still too self-conscious to take selfies (especially in a place called the “Forbidden City”), but selfie sticks are commonplace among the guests any major tourist attraction.</p>
+<figure><img src="/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2016/05/P_20160512_135151-1.jpg" alt="Great Wall parking lot"></figure>
+<p>And of course you can’t go to China without conquering the Great Wall! The section we went to actually covered a circular area (rather than progressing in a line), because the surrounding mountains (and Mongols) necessitated a rather unique defense strategy. Our tour guide explained the military logic in detail, but in my opinion the real defense was the absurdly steep and uneven stairs with handrails only a foot above the ground. It was enough to make any enemy stumble, even if they did manage to scale to outside of the wall itself.</p>
+<figure><img src="/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2016/05/P_20160512_141123_BF.jpg" alt="Great Wall selfie"></figure>
+<p>Good exposure, bad finger positioning. I’ll get it at some point.</p>
+<figure><img src="/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2016/05/P_20160512_142857.jpg" alt="Beijing landscape"></figure>
+<p>We’re too far away here to really tell, but that entire “flat” area is all Beijing, with its apartments and skyscrapers. I was astonished by the incredibly large ratio of apartments to other buildings; they seemed like an invasive species of plant that crowded out all other buildings and industries. Dr. Griffin mentioned how the Chinese government was known for building “ghost cities,” in which apartment buildings and train stations are built in anticipation of population growth in a given area that doesn’t boom–or booms into a different location, leaving the new buildings empty. Even in Beijing itself, I often found myself wondering how all of those millions of people could possibly be productively employed, with so little physical evidence of businesses of any sort in the surrounding area. China has a lot of population problems on the horizon much more complex than simply hedging exponential growth.</p>
+<figure><img src="/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2016/05/P_20160512_143704-1.jpg" alt="Mountains"></figure>
+<p>Just some pretty mountains. #desktop!</p>
+<figure><img src="/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2016/05/P_20160512_143933.jpg" alt="Great wall circle"></figure>
+<p>Here you can see the whole circular section of the great wall that we toured, viewed from the highest point. Off to the left you can see where it stretches off in a straight line once again.</p>
+<figure><img src="/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2016/05/P_20160513_092511.jpg" alt="Temple of Good Harvests"></figure>
+<p>I didn’t take many pictures at the Temple of Heaven in the places I should have. Much of the area was actually a park (with trees and flowers and grassy fields), where many people from the city came to play badminton or dance to music. Some people even came alone with their hackey-sacks and birdies and paddles, simply pulling people aside (even foreigners like us!) to play a game or two with them. When you live in such a vast concrete plain as Beijing, you really learn to cherish your parks and social areas.</p>
+<figure><img src="/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2016/05/P_20160513_094000.jpg" alt="Altar gate"></figure>
+<p>Pathways like this were called “dragon lines,” upon which only the emperor was allowed to travel between his various facilities. Fun fact: when you’re the emperor and servants carry you everywhere, sometimes you get halfway to where you need to go before realizing that you forgot to change out of your pajamas. In that case, a dressing room is located conveniently halfway down the line for you to take a pit stop at, with the added benefit of giving your servants’ shoulders a much-needed break.</p>
+<p>That’s all the images I have from Beijing. This leg of the trip was mostly touristy business, and not much “regular life” as one would expect when studying abroad; in the next blog post or two I’ll try to touch on more of my daily routine from my first few days in Hangzhou!</p>
+<p><em>Bonus Quote</em>: Our tour guide for this section of the trip (a Beijing native) wanted to explain to the group the symbolic importance of the dragon in Chinese culture. Dragons were creatures of great wealth, saving, and self-sufficiency; they would eat up all of their treasure and store in in their large stomachs without ever releasing it (in the form of feces) again. Or, as our guide phrased it,</p>
+<blockquote>
+<p>The dragon have big mouth and no ass. So, he eat a lot, and don’t do shit.</p>
+</blockquote>
+<p>Ancient emperors, he said, believed they were dragons in human form.</p>
+<p>No kidding!</p>
+</section>
+
+    
+        <br>
+        <p>
+            
+                
+            
+                
+                    <a class="small tag" href="/lookasides/neillrobson.github.io/css-cleanup-19/tag/china">china</a>
+                
+            
+                
+                    <a class="small tag" href="/lookasides/neillrobson.github.io/css-cleanup-19/tag/travel">travel</a>
+                
+            
+                
+                    <a class="small tag" href="/lookasides/neillrobson.github.io/css-cleanup-19/tag/personal">personal</a>
+                
+            
+        </p>
+    
+
+    <div class="clear"></div>
+
+    
+        <div id="disqus_thread"></div>
+<script>
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+ */
+var disqus_config = function () {
+
+this.page.url = "https://neillrobson.com/blog/2016/05/19/the-middle-country/";  // Your page's canonical URL variable
+this.page.identifier = "/blog/2016/05/19/the-middle-country"; // Your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://neillrobson.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+
+    
+    
+
+    
+        <hr class="full">
+    
+    
+        <a class="halfWidth left previousEntry" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2015/10/02/hello-world/">
+            <h5>Previous post</h5>
+            <span class="title">Hello World</span>
+            <span class="summary"> What is this blog about? Who is Neill Robson? The Rattle?! I’ll try to cover some of those burning questions right here–probably just as much for my benefit as yours. </span>
+        </a>
+    
+    
+        <a class="left halfWidth nextEntry" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2016/05/22/the-room/">
+            <h5>Next post</h5>
+            <span class="title">The Room</span>
+            <span class="summary"> What does day-to-day life look like for an international student living at Zhejiang International University in Hangzhou? Many factors come into play, including food, physical activity, and social events–but it seemed appropriate to first introduce my dorm room: my “home away from home” so to speak. </span>
+        </a>
+    
+</div>
+
+
+        <div class="clear"></div>
+      </div>
+
+      <div class="footer">
+  <small class="copyright">
+    &copy; 2025 Neill Robson. Layout inspired by
+    <a href="https://blot.im/" target="_blank">Blot</a>.
+    <br>
+    This site is hosted on
+    <a href="https://github.com" target="_blank">GitHub</a> and built with
+    <a href="https://www.11ty.dev/" target="_blank">Eleventy</a>. Icons by
+    <a href="https://icons8.com" target="_blank">Icons8</a>.
+  </small>
+</div>
+
+    </div>
+  </body>
+</html>

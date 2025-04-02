@@ -63,27 +63,27 @@
     <input type="radio" name="color-theme" value="light" onchange="switchLight()" id="theme-light">
     <div class="container">
       <div class="header">
+  
+  <picture id="logo">
+    <img class="rounded" src="https://gravatar.com/avatar/5264adfae13785676b4228ce2784dc92?s=64&d=https%3A%2F%2Fneillrobson.com%2Fassets%2Fimages%2F2023-profile.jpg" alt="Neill Robson">
+  </picture>
   <div id="title">
-    
-    <img id="logo" class="rounded" src="https://gravatar.com/avatar/5264adfae13785676b4228ce2784dc92?s=64&d=https%3A%2F%2Fneillrobson.com%2Fassets%2Fimages%2F2023-profile.jpg" alt="Neill Robson">
     Neill Robson's Website
   </div>
   <div class="nav">
-    <div class="links">
-      
-      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/" title="About">About</a>
-      
-      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/now" title="Now">Now</a>
-      
-      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/blog" title="Blog">Blog</a>
-      
-      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/archive" title="Archive">Archive</a>
-      
-      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/projects" title="Projects">Projects</a>
-      
-      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/contact" title="Contact">Contact</a>
-      
-    </div>
+    
+    <a href="/lookasides/neillrobson.github.io/css-cleanup-19/" title="About">About</a>
+    
+    <a href="/lookasides/neillrobson.github.io/css-cleanup-19/now" title="Now">Now</a>
+    
+    <a href="/lookasides/neillrobson.github.io/css-cleanup-19/blog" title="Blog">Blog</a>
+    
+    <a href="/lookasides/neillrobson.github.io/css-cleanup-19/archive" title="Archive">Archive</a>
+    
+    <a href="/lookasides/neillrobson.github.io/css-cleanup-19/projects" title="Projects">Projects</a>
+    
+    <a href="/lookasides/neillrobson.github.io/css-cleanup-19/contact" title="Contact">Contact</a>
+    
     <div class="utils">
       <a href="/lookasides/neillrobson.github.io/css-cleanup-19/feed.xml" title="RSS">RSS</a>
       <fieldset id="theme-switcher" class="visible">
@@ -117,10 +117,12 @@
       <div class="main">
         
 <div class="entry">
-    <div class="date left margin">
-        <a class="small" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2024/04/15/rxjs-batched-processing/">April 15, 2024</a>
+    <div class="title">
+        <div class="date">
+            <a class="small" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2024/04/15/rxjs-batched-processing/">April 15, 2024</a>
+        </div>
+        <h1>Batched Processing in RxJS</h1>
     </div>
-    <h1>Batched Processing in RxJS</h1>
 
     <section>
 <p>When you have a ton of data that all needs to be processed, reactive programming makes the implementation easy to read, terse to write, and efficient to run.
@@ -174,15 +176,15 @@ It creates child streams and merges them into the output stream as soon as input
     <span class="token function">take</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>sendToMyPhone<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>Testing it out yields a result worse than we started with: <strong>the order of the source images is no longer preserved</strong>. We start seeing cat pictures from decades ago, simply because they happened to be the first ones returned by the API.</p>
-<div class="margin left"><figure>
-<img src="/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2024/04/15/rxjs-batched-processing/parallel.png" alt="visualization of parallel pipeline processing" title="Every single image is sent to the API in parallel. There were 21 images in the sample dataset, but the fourth cat image was the 17th item: we sent off four unnecessary API requests."><figcaption>Every single image is sent to the API in parallel. There were 21 images in the sample dataset, but the fourth cat image was the 17th item: we sent off four unnecessary API requests.</figcaption>
-</figure>
-</div></section>
+</section>
 <section>
 <div class="section-link">
 <a class="no-tufte-underline" href="#maintaining-order"></a><h2 id="maintaining-order">Maintaining Order</h2>
 </div>
-<p>As it turns out, the serialization of streams in <code>concatMap</code> (only creating a new stream when the previous one has completed) is a feature unique to that operator.
+<div class="margin left"><figure>
+<img src="/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2024/04/15/rxjs-batched-processing/parallel.png" alt="visualization of parallel pipeline processing" title="Every single image is sent to the API in parallel. There were 21 images in the sample dataset, but the fourth cat image was the 17th item: we sent off four unnecessary API requests."><figcaption>Every single image is sent to the API in parallel. There were 21 images in the sample dataset, but the fourth cat image was the 17th item: we sent off four unnecessary API requests.</figcaption>
+</figure>
+</div><p>As it turns out, the serialization of streams in <code>concatMap</code> (only creating a new stream when the previous one has completed) is a feature unique to that operator.
 If we simply split out the “map” part of the operator from the concatenation, we get the best of both worlds:</p>
 <ul>
 <li>All of the streams are created up front (in the <code>map</code> operator)</li>
@@ -373,14 +375,16 @@ s.setAttribute('data-timestamp', +new Date());
 
     
         <hr class="full">
-    
-    
-        <a class="halfWidth left previousEntry" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2024/01/18/leadership-full/">
-            <h5>Previous post</h5>
-            <span class="title">Small Group Leadership Brunch Speech</span>
-            <span class="summary"> The following is a written draft of a speech I gave to a gathering of small group leaders at my church several months ago. After running across the file, I felt it might be encouraging for others to read. </span>
-        </a>
-    
+        <div class="pagination-cards">
+        
+            <a href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2024/01/18/leadership-full/">
+                <h5>Previous post</h5>
+                <span class="title">Small Group Leadership Brunch Speech</span>
+                <span class="summary"> The following is a written draft of a speech I gave to a gathering of small group leaders at my church several months ago. After running across the file, I felt it might be encouraging for others to read. </span>
+            </a>
+        
+        
+        </div>
     
 </div>
 

@@ -63,27 +63,27 @@
     <input type="radio" name="color-theme" value="light" onchange="switchLight()" id="theme-light">
     <div class="container">
       <div class="header">
+  
+  <picture id="logo">
+    <img class="rounded" src="https://gravatar.com/avatar/5264adfae13785676b4228ce2784dc92?s=64&d=https%3A%2F%2Fneillrobson.com%2Fassets%2Fimages%2F2023-profile.jpg" alt="Neill Robson">
+  </picture>
   <div id="title">
-    
-    <img id="logo" class="rounded" src="https://gravatar.com/avatar/5264adfae13785676b4228ce2784dc92?s=64&d=https%3A%2F%2Fneillrobson.com%2Fassets%2Fimages%2F2023-profile.jpg" alt="Neill Robson">
     Neill Robson's Website
   </div>
   <div class="nav">
-    <div class="links">
-      
-      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/" title="About">About</a>
-      
-      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/now" title="Now">Now</a>
-      
-      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/blog" title="Blog">Blog</a>
-      
-      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/archive" title="Archive">Archive</a>
-      
-      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/projects" title="Projects">Projects</a>
-      
-      <a href="/lookasides/neillrobson.github.io/css-cleanup-19/contact" title="Contact">Contact</a>
-      
-    </div>
+    
+    <a href="/lookasides/neillrobson.github.io/css-cleanup-19/" title="About">About</a>
+    
+    <a href="/lookasides/neillrobson.github.io/css-cleanup-19/now" title="Now">Now</a>
+    
+    <a href="/lookasides/neillrobson.github.io/css-cleanup-19/blog" title="Blog">Blog</a>
+    
+    <a href="/lookasides/neillrobson.github.io/css-cleanup-19/archive" title="Archive">Archive</a>
+    
+    <a href="/lookasides/neillrobson.github.io/css-cleanup-19/projects" title="Projects">Projects</a>
+    
+    <a href="/lookasides/neillrobson.github.io/css-cleanup-19/contact" title="Contact">Contact</a>
+    
     <div class="utils">
       <a href="/lookasides/neillrobson.github.io/css-cleanup-19/feed.xml" title="RSS">RSS</a>
       <fieldset id="theme-switcher" class="visible">
@@ -117,10 +117,12 @@
       <div class="main">
         
 <div class="entry">
-    <div class="date left margin">
-        <a class="small" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2020/11/23/grad-school-like-im-five/">November 23, 2020</a>
+    <div class="title">
+        <div class="date">
+            <a class="small" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2020/11/23/grad-school-like-im-five/">November 23, 2020</a>
+        </div>
+        <h1>Grad School Like I'm Five: Buffer Overflow</h1>
     </div>
-    <h1>Grad School Like I'm Five: Buffer Overflow</h1>
 
     <section>
 <p>According to <a href="https://github.com">GitHub</a>, I’ve written approximately 6,000 lines of code over the course of the past four months (welcome to grad school!).
@@ -239,20 +241,22 @@ s.setAttribute('data-timestamp', +new Date());
 
     
         <hr class="full">
-    
-    
-        <a class="halfWidth left previousEntry" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2018/02/24/book-review-the-circle-by-dave-eggers/">
-            <h5>Previous post</h5>
-            <span class="title">Book Review: The Circle, by Dave Eggers</span>
-            <span class="summary"> For the first time I can remember in a long while, I did not have the endurance to make it through a book. The Circle was patronizing, immature, and (as others have already mentioned) offered nothing new to the conversation. </span>
-        </a>
-    
-    
-        <a class="left halfWidth nextEntry" href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2022/11/01/typescripts-skeleton-key/">
-            <h5>Next post</h5>
-            <span class="title">Typescript's Skeleton Key</span>
-            <span class="summary"> The intrepid Typescript developer will find several types that, frankly, make no sense whatsoever in real life. A “string” or “number” is perfectly reasonable, but what is an “unknown” or “never” type? More importantly, what in the world is a “keyof never”? </span>
-        </a>
+        <div class="pagination-cards">
+        
+            <a href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2018/02/24/book-review-the-circle-by-dave-eggers/">
+                <h5>Previous post</h5>
+                <span class="title">Book Review: The Circle, by Dave Eggers</span>
+                <span class="summary"> For the first time I can remember in a long while, I did not have the endurance to make it through a book. The Circle was patronizing, immature, and (as others have already mentioned) offered nothing new to the conversation. </span>
+            </a>
+        
+        
+            <a href="/lookasides/neillrobson.github.io/css-cleanup-19/blog/2022/11/01/typescripts-skeleton-key/">
+                <h5>Next post</h5>
+                <span class="title">Typescript's Skeleton Key</span>
+                <span class="summary"> The intrepid Typescript developer will find several types that, frankly, make no sense whatsoever in real life. A “string” or “number” is perfectly reasonable, but what is an “unknown” or “never” type? More importantly, what in the world is a “keyof never”? </span>
+            </a>
+        
+        </div>
     
 </div>
 

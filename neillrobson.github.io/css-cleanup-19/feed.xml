@@ -61,15 +61,15 @@ It creates child streams and merges them into the output stream as soon as input
     &lt;span class=&quot;token function&quot;&gt;take&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;subscribe&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sendToMyPhone&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Testing it out yields a result worse than we started with: &lt;strong&gt;the order of the source images is no longer preserved&lt;/strong&gt;. We start seeing cat pictures from decades ago, simply because they happened to be the first ones returned by the API.&lt;/p&gt;
-&lt;div class=&quot;margin left&quot;&gt;&lt;figure&gt;
-&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2024/04/15/rxjs-batched-processing/parallel.png&quot; alt=&quot;visualization of parallel pipeline processing&quot; title=&quot;Every single image is sent to the API in parallel. There were 21 images in the sample dataset, but the fourth cat image was the 17th item: we sent off four unnecessary API requests.&quot;&gt;&lt;figcaption&gt;Every single image is sent to the API in parallel. There were 21 images in the sample dataset, but the fourth cat image was the 17th item: we sent off four unnecessary API requests.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;/div&gt;&lt;/section&gt;
+&lt;/section&gt;
 &lt;section&gt;
 &lt;div class=&quot;section-link&quot;&gt;
 &lt;a class=&quot;no-tufte-underline&quot; href=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/css-cleanup-19/blog/2024/04/15/rxjs-batched-processing/#maintaining-order&quot;&gt;&lt;/a&gt;&lt;h2 id=&quot;maintaining-order&quot;&gt;Maintaining Order&lt;/h2&gt;
 &lt;/div&gt;
-&lt;p&gt;As it turns out, the serialization of streams in &lt;code&gt;concatMap&lt;/code&gt; (only creating a new stream when the previous one has completed) is a feature unique to that operator.
+&lt;div class=&quot;margin left&quot;&gt;&lt;figure&gt;
+&lt;img src=&quot;https://neillrobson.com/lookasides/neillrobson.github.io/css-cleanup-19/assets/images/2024/04/15/rxjs-batched-processing/parallel.png&quot; alt=&quot;visualization of parallel pipeline processing&quot; title=&quot;Every single image is sent to the API in parallel. There were 21 images in the sample dataset, but the fourth cat image was the 17th item: we sent off four unnecessary API requests.&quot;&gt;&lt;figcaption&gt;Every single image is sent to the API in parallel. There were 21 images in the sample dataset, but the fourth cat image was the 17th item: we sent off four unnecessary API requests.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;&lt;p&gt;As it turns out, the serialization of streams in &lt;code&gt;concatMap&lt;/code&gt; (only creating a new stream when the previous one has completed) is a feature unique to that operator.
 If we simply split out the “map” part of the operator from the concatenation, we get the best of both worlds:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;All of the streams are created up front (in the &lt;code&gt;map&lt;/code&gt; operator)&lt;/li&gt;
